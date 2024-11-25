@@ -161,7 +161,17 @@
         </div>
       </section>
       <!--footer copyrights-->
-     
+      <footer id="sp-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <p>
+              Copyright <?=date('Y')?> - BAPPERIDA Kab. Asahan
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
       <!--Side Menu-->
       <div class="offcanvas-menu">
         <a href="#" class="close-offcanvas"><i class="fa fa-remove"></i></a>
