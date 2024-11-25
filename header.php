@@ -7,7 +7,7 @@
      <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
      <!-- Basic Page Needs
   ================================================== -->
-    
+
      <meta name="keywords" content="HTML5 Template" />
      <meta name="description" content=" HTML5 Template - v1.0" />
      <meta name="author" content="" />
@@ -16,7 +16,7 @@
      <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1" />
-   
+
      <!--All Css-->
      <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/css/bootstrap.css" type="text/css" />
      <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/css/font-awesome.min.css" type="text/css" />
@@ -42,6 +42,33 @@
      <link rel="shortcut icon" href="<?= get_template_directory_uri() ?>/images/logoasahan.png" type="image/x-icon">
 
      <?php wp_head(); ?>
+
+     <!-- <style>
+          .sp-megamenu-parent {
+               list-style: none;
+               padding: 0;
+               display: flex;
+          }
+
+          .sp-megamenu-parent>li {
+               margin-right: 20px;
+          }
+
+          .sp-megamenu-parent>li>a {
+               text-decoration: none;
+               color: #000;
+          }
+
+          .sp-megamenu-parent .submenu {
+               display: none;
+               position: absolute;
+               background: #fff;
+          }
+
+          .sp-megamenu-parent>li:hover .submenu {
+               display: block;
+          }
+     </style> -->
 
 </head>
 
@@ -92,7 +119,7 @@
                          </div>
                          <div id="sp-top2" class="col-sm-9 col-md-9 hidden-xs">
                               <ul class="sp-contact-info">
-                                 
+
                                    <li class="sp-contact-phone">
                                         <i class="icon-call-in"></i>
                                         <p class="contact-content">
@@ -119,15 +146,17 @@
                          <div id="sp-menu" class="col-sm-12 col-md-12">
                               <div class="sp-column">
                                    <div class="sp-megamenu-wrapper">
-                                        <a id="offcanvas-toggler" href="#"><i class="fa fa-bars"></i></a>
-                                        <ul class="sp-megamenu-parent menu-fade-up hidden-xs">
-                                        <li class="sp-menu-item"><a href="<?= home_url() ?>">Home</a></li>
-								
-								<li class="sp-menu-item"><a href="about.html">about</a></li>
-								<li class="sp-menu-item"><a href="projects.html">projects</a></li>
-								
-								<li class="sp-menu-item"><a href="contact.html">Contact</a></li>
-                                        </ul>
+                                        <!-- <a id="offcanvas-toggler" href="#"><i class="fa fa-bars"></i></a> -->
+                                        <?php
+                                        wp_nav_menu(array(
+                                             'theme_location' => 'header-menu',
+                                             'container'      => false,               // Tidak ada elemen pembungkus
+                                             'menu_class'     => 'sp-megamenu-parent menu-fade-up hidden-xs',             // Kelas untuk `<ul>`
+                                             'walker'         => new Custom_Walker_Nav_Menu(), // Gunakan walker custom
+                                             'fallback_cb'    => false
+                                        ));
+                                        ?>
+                                       
                                    </div>
                               </div>
                          </div>

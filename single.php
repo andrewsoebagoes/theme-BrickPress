@@ -72,16 +72,7 @@
                                     <li><a href="/" class="label label-info" rel="tag" target="_parent">Board</a></li>
                                     <li><a href="/" class="label label-info" rel="tag" target="_parent">Career</a></li>
                                 </ul>
-                                <ul class="pager pagenav">
-                                    <li class="previous">
-                                        <a href="/" rel="prev" target="_parent">
-                                            <span class="icon-chevron-left"></span> Prev</a>
-                                    </li>
-                                    <li class="next">
-                                        <a href="/" rel="next" target="_parent">
-										Next <span class="icon-chevron-right"></span></a>
-                                    </li>
-                                </ul>
+                               
                                
                             </article>
                         </div>
@@ -130,27 +121,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="widget gallery">
-                            <h3 class="sp-module-title">Flickr Photos</h3>
-                            <div class="sp-flickr-gallery ">
-                                <div class="sp-flickr-gallery-content">
-                                    <ul class="sp-flickr-gallery" data-id="83573762@N05" data-count="0" data-setid="72157663666458186">
-                                        <li><a target="_blank" href="http://www.flickr.com/photos/rusafy/24486097205/in/set-72157663666458186/" title="12"><span class="flickr-gallery-wrap"><img class="img-responsive" alt="12" src="http://farm2.staticflickr.com/1712/24486097205_356793e3e0_s.jpg"></span></a></li>
-                                        <li><a target="_blank" href="http://www.flickr.com/photos/rusafy/24459895706/in/set-72157663666458186/" title="23"><span class="flickr-gallery-wrap"><img class="img-responsive" alt="23" src="http://farm2.staticflickr.com/1512/24459895706_923897c084_s.jpg"></span></a></li>
-                                        <li><a target="_blank" href="http://www.flickr.com/photos/rusafy/24403696971/in/set-72157663666458186/" title="1"><span class="flickr-gallery-wrap"><img class="img-responsive" alt="1" src="http://farm2.staticflickr.com/1524/24403696971_45bd9fb9c8_s.jpg"></span></a></li>
-                                        <li><a target="_blank" href="http://www.flickr.com/photos/rusafy/24403694221/in/set-72157663666458186/" title="martin-soto-climent-unknown-feldschlösschen"><span class="flickr-gallery-wrap"><img class="img-responsive" alt="martin-soto-climent-unknown-feldschlösschen" src="http://farm2.staticflickr.com/1592/24403694221_7087f01892_s.jpg"></span></a></li>
-                                        <li><a target="_blank" href="http://www.flickr.com/photos/rusafy/24377806572/in/set-72157663666458186/" title="20110927064108-Web-Rachel-Install-1"><span class="flickr-gallery-wrap"><img class="img-responsive" alt="20110927064108-Web-Rachel-Install-1" src="http://farm2.staticflickr.com/1491/24377806572_fa803e71c1_s.jpg"></span></a></li>
-                                        <li><a target="_blank" href="http://www.flickr.com/photos/rusafy/24377806372/in/set-72157663666458186/" title="cd188c0f23f595a6ee643b4491276c59-1110x730"><span class="flickr-gallery-wrap"><img class="img-responsive" alt="cd188c0f23f595a6ee643b4491276c59-1110x730" src="http://farm2.staticflickr.com/1685/24377806372_2ef47198ac_s.jpg"></span></a></li>
-                                        <li><a target="_blank" href="http://www.flickr.com/photos/rusafy/24190548210/in/set-72157663666458186/" title="7"><span class="flickr-gallery-wrap"><img class="img-responsive" alt="7" src="http://farm2.staticflickr.com/1641/24190548210_a0791ea8bf_s.jpg"></span></a></li>
-                                        <li><a target="_blank" href="http://www.flickr.com/photos/rusafy/24190546860/in/set-72157663666458186/" title="21"><span class="flickr-gallery-wrap"><img class="img-responsive" alt="21" src="http://farm2.staticflickr.com/1579/24190546860_5c5c7b8e11_s.jpg"></span></a></li>
-                                        <li><a target="_blank" href="http://www.flickr.com/photos/rusafy/23859298223/in/set-72157663666458186/" title="7503d1887f03d27fef899bd2237c3e21-1110x730"><span class="flickr-gallery-wrap"><img class="img-responsive" alt="7503d1887f03d27fef899bd2237c3e21-1110x730" src="http://farm2.staticflickr.com/1456/23859298223_f9b1d94b7c_s.jpg"></span></a></li>
-                                        <li><a target="_blank" href="http://www.flickr.com/photos/rusafy/23857912114/in/set-72157663666458186/" title="9"><span class="flickr-gallery-wrap"><img class="img-responsive" alt="9" src="http://farm2.staticflickr.com/1597/23857912114_cc527ab639_s.jpg"></span></a></li>
-                                        <li><a target="_blank" href="http://www.flickr.com/photos/rusafy/22931533723/in/set-72157663666458186/" title="7131569295_b7d4753e1a_h"><span class="flickr-gallery-wrap"><img class="img-responsive" alt="7131569295_b7d4753e1a_h" src="http://farm1.staticflickr.com/595/22931533723_b6421c9823_s.jpg"></span></a></li>
-                                        <li><a target="_blank" href="http://www.flickr.com/photos/rusafy/22931530843/in/set-72157663666458186/" title="shutterstock_8160115"><span class="flickr-gallery-wrap"><img class="img-responsive" alt="shutterstock_8160115" src="http://farm6.staticflickr.com/5772/22931530843_78792e2d2a_s.jpg"></span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                       
                         <div class="widget post">
                             <h3 class="sp-module-title">Latest Post</h3>
                             <div class="latestnews">

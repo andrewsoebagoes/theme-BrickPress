@@ -692,7 +692,7 @@ Header
     letter-spacing: -1px;
     line-height: 60px;
     padding: 0 18px;
-    text-transform: lowercase;
+    /* text-transform: lowercase; */
     transition: none;
     -webkit-transition: none;
 }
