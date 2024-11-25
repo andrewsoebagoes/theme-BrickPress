@@ -7,7 +7,7 @@
      <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
      <!-- Basic Page Needs
   ================================================== -->
-     <title>Home</title>
+    
      <meta name="keywords" content="HTML5 Template" />
      <meta name="description" content=" HTML5 Template - v1.0" />
      <meta name="author" content="" />
@@ -16,10 +16,7 @@
      <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1" />
-     <link
-          href="images/favicon.ico"
-          rel="shortcut icon"
-          type="image/vnd.microsoft.icon" />
+   
      <!--All Css-->
      <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/css/bootstrap.css" type="text/css" />
      <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/css/font-awesome.min.css" type="text/css" />
@@ -42,11 +39,20 @@
      <script src="<?= get_template_directory_uri() ?>/js/jQuery.js" type="text/javascript"></script>
      <title><?php bloginfo('name'); ?></title>
 
+     <link rel="shortcut icon" href="<?= get_template_directory_uri() ?>/images/logoasahan.png" type="image/x-icon">
+
      <?php wp_head(); ?>
+
+     <style>
+          .inner #blog article.blog-block {
+    box-shadow: 1px 2px 7.28px 0.72px rgba(0, 0, 0, 0.08);
+    margin-bottom: 50px;
+}
+     </style>
 </head>
 
 <body <?php body_class(); ?>>
-     <div class="body-innerwrapper">
+     <div class="body-innerwrapper inner">
           <!--Top Contact info-->
           <section id="sp-top-info">
                <div class="container">
@@ -92,25 +98,19 @@
                          </div>
                          <div id="sp-top2" class="col-sm-9 col-md-9 hidden-xs">
                               <ul class="sp-contact-info">
-                                   <li class="sp-contact-time">
-                                        <i class="ti-timer"></i>
-                                        <p class="contact-content">
-                                             <span class="contact-title">Contact Time:</span>
-                                             <span class="time">Mon-Sat: 9.00-18.00</span>
-                                        </p>
-                                   </li>
+                                 
                                    <li class="sp-contact-phone">
                                         <i class="icon-call-in"></i>
                                         <p class="contact-content">
                                              <span class="contact-title">Phone Number:</span>
-                                             <span>(+89) 530-352-3027</span>
+                                             <span>0123456789</span>
                                         </p>
                                    </li>
                                    <li class="sp-contact-email">
                                         <i class="icon-envelope-letter"></i>
                                         <p class="contact-content">
                                              <span class="contact-title">Contact Mail:</span>
-                                             <span>info@mail.com</span>
+                                             <span>@asahankab.go.id</span>
                                         </p>
                                    </li>
                               </ul>
@@ -127,34 +127,11 @@
                                    <div class="sp-megamenu-wrapper">
                                         <a id="offcanvas-toggler" href="#"><i class="fa fa-bars"></i></a>
                                         <ul class="sp-megamenu-parent menu-fade-up hidden-xs">
-                                        <li class="sp-menu-item"><a href="index.html">Home</a></li>
-								<li class="sp-menu-item sp-has-child current-item active"><a href="services.html">services</a>
-									<div class="sp-dropdown sp-dropdown-main sp-menu-right">
-										<div class="sp-dropdown-inner">
-											<ul class="sp-dropdown-items">
-												<li class="sp-menu-item"><a href="single-services.html">wooden work</a></li>
-												<li class="sp-menu-item"><a href="single-services.html">metal roofing</a></li>
-												<li class="sp-menu-item"><a href="single-services.html">architechture &amp; design</a></li>
-												<li class="sp-menu-item"><a href="single-services.html">general construction</a></li>
-												<li class="sp-menu-item"><a href="single-services.html">hardwood flooring</a></li>
-												<li class="sp-menu-item"><a href="single-services.html">house remodeling</a></li>
-											</ul>
-										</div>
-									</div>
-								</li>
+                                        <li class="sp-menu-item"><a href="<?= home_url() ?>">Home</a></li>
+								
 								<li class="sp-menu-item"><a href="about.html">about</a></li>
 								<li class="sp-menu-item"><a href="projects.html">projects</a></li>
-								<li class="sp-menu-item current-item  sp-has-child"><a href="blog.html">news</a>
-									<div class="sp-dropdown sp-dropdown-main sp-menu-right">
-										<div class="sp-dropdown-inner">
-											<ul class="sp-dropdown-items">
-												<li class="sp-menu-item"><a href="blog.html">Blog work</a></li>
-												<li class="sp-menu-item"><a href="single-blog.html">Single Blog v1</a></li>
-												<li class="sp-menu-item"><a href="single-blog-2.html">Single Blog v2</a></li>
-											</ul>
-										</div>
-									</div>
-								</li>
+								
 								<li class="sp-menu-item"><a href="contact.html">Contact</a></li>
                                         </ul>
                                    </div>

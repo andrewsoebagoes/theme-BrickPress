@@ -4,41 +4,32 @@
         <div class="container">
           <div class="row">
             <div id="sp-bottom1" class="col-sm-6 col-md-3">
-              <h3 class="sp-module-title">Address</h3>
+              <h3 class="sp-module-title">Alamat</h3>
               <ul class="textwidget">
                 <li>
                   <i class="fa fa-map-marker"><i class="hidden">address</i></i>
-                  14 Tottenham Road, London, England.
+                  Jl. Jenderal Sudirman No.05, Kisaran, Kisaran Baru, Asahan, Kabupaten Asahan, Sumatera Utara 21211
                 </li>
-                <li><i class="fa fa-phone"></i> (102) 6666 8888</li>
-                <li><i class="fa fa-envelope"></i> info@rusafy.com</li>
-                <li><i class="fa fa-fax"></i> (102) 8888 9999</li>
-                <li><i class="fa fa-clock-o"></i> Mon - Sat: 9:00 - 18:00</li>
+                <li><i class="fa fa-phone"></i> 0123456789</li>
+                <li><i class="fa fa-envelope"></i> @asahankab.go.id</li>
+                <li><i class="fa fa-fax"></i> 0123456789</li>
               </ul>
             </div>
             <div id="sp-bottom2" class="col-sm-6 col-md-3">
-              <h3 class="sp-module-title">Usefull Links</h3>
+              <h3 class="sp-module-title">Kategori</h3>
               <ul class="textwidget">
-                <li>
-                  <i class="ti-arrow-right"></i
-                  ><a href="#" target="_parent"> About Us</a>
-                </li>
-                <li>
-                  <i class="ti-arrow-right"></i
-                  ><a href="#" target="_parent"> Our Adviser</a>
-                </li>
-                <li>
-                  <i class="ti-arrow-right"></i
-                  ><a href="#" target="_parent"> Behind Scene</a>
-                </li>
-                <li>
-                  <i class="ti-arrow-right"></i
-                  ><a href="#" target="_parent"> Partners</a>
-                </li>
-                <li>
-                  <i class="ti-arrow-right"></i
-                  ><a href="#" target="_parent"> Quick links</a>
-                </li>
+              <?php 
+						$categories = get_categories();
+						foreach($categories as $category){
+						?>
+						<li>
+              <i class="ti-arrow-right"></i
+							<a href="<?= get_category_link( $category->term_id ) ?>"><?= $category->name  ?> <span>(<?= $category->category_count ?>)</span></a>
+						</li>
+						<?php 
+						}
+						?>
+                
               </ul>
             </div>
             <div id="sp-bottom3" class="col-sm-6 col-md-3">
@@ -170,18 +161,7 @@
         </div>
       </section>
       <!--footer copyrights-->
-      <footer id="sp-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 text-center">
-              <p>
-                Designed &amp; Developed with <i class="fa fa-heart-o"></i> By
-                Rusafy
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
+     
       <!--Side Menu-->
       <div class="offcanvas-menu">
         <a href="#" class="close-offcanvas"><i class="fa fa-remove"></i></a>
@@ -191,32 +171,7 @@
             <div class="sp-module-content">
               <ul class="nav menu">
                 <li class="item-101 current active">
-                  <a href="index.html">Home</a>
-                </li>
-                <li class="item-165 deeper parent">
-                  <a href="services.html">services</a>
-                  <ul class="nav-child unstyled small">
-                    <li class="item-167">
-                      <a href="single-services.html">wooden work</a>
-                    </li>
-                    <li class="item-168">
-                      <a href="single-services.html">metal roofing</a>
-                    </li>
-                    <li class="item-169">
-                      <a href="single-services.html"
-                        >architechture &amp; design</a
-                      >
-                    </li>
-                    <li class="item-170">
-                      <a href="single-services.html">general construction</a>
-                    </li>
-                    <li class="item-171">
-                      <a href="single-services.html">hardwood flooring</a>
-                    </li>
-                    <li class="item-172">
-                      <a href="single-services.html">house remodeling</a>
-                    </li>
-                  </ul>
+                  <a href="<?= home_url() ?>">Home</a>
                 </li>
                 <li class="item-166"><a href="about.html">about</a></li>
                 <li class="item-111"><a href="projects.html">projects</a></li>

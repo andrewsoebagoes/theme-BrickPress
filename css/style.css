@@ -86,7 +86,7 @@ p {
 }
 
 a {
-    color: #023669;
+    color: #036606;
 }
 
 a:hover {
@@ -139,8 +139,8 @@ button style
 }
 
 .sppb-btn.sppb-btn-default {
-    background-color: #023669 !important;
-    border: 2px solid #023669;
+    background-color: #036606 !important;
+    border: 2px solid #036606;
     color: #fff;
     text-shadow: 0 1px rgba(0, 0, 0, 0.15);
 }
@@ -153,18 +153,18 @@ button style
 
 .sppb-btn.sppb-btn-default:hover {
     background-color: transparent !important;
-    border-color: #023669 !important;
-    color: #023669;
+    border-color: #036606 !important;
+    color: #036606;
 }
 
 .sppb-btn.sppb-btn-primary {
     background-color: #f5dd25;
     border: 2px solid transparent!important;
-    color: #023669;
+    color: #036606;
 }
 
 .simple {
-    color: #023669;
+    color: #036606;
     font-family: Poppins;
     font-weight: 600;
     padding: 0;
@@ -180,14 +180,14 @@ button style
 
 .btn-primary,
 .sppb-btn-primary {
-    background-color: #023669;
+    background-color: #036606;
     border-color: #01274b;
 }
 
 .sppb-btn.sppb-btn-success {
     background-color: transparent;
-    border: 3px solid #023669;
-    color: #023669;
+    border: 3px solid #036606;
+    color: #036606;
 }
 
 .sppb-btn.sppb-btn-lg {
@@ -197,7 +197,7 @@ button style
 }
 
 .sppb-btn.sppb-btn-success:hover {
-    background-color: #023669;
+    background-color: #036606;
     color: #f5dd25;
 }
 
@@ -209,7 +209,7 @@ main heading
 */
 
 .main-heading h2 {
-    color: #033566;
+    color: #036606;
     font-size: 40px;
     font-weight: 700;
     line-height: 40px;
@@ -517,7 +517,7 @@ ul.social-icons > li a {
     background-color: #f5dd25;
     border: 2px solid #f5dd25;
     border-radius: 50%;
-    color: #023669;
+    color: #036606;
     display: block;
     font-size: 15px;
     height: 30px;
@@ -546,13 +546,13 @@ ul.social-icons > li a {
 
 .sppb-person-social > li a:hover,
 #contact .sppb-person-social > li a:hover{
-    background: #023669 none repeat scroll 0 0;
-    border-color: #023669;
+    background: #036606 none repeat scroll 0 0;
+    border-color: #036606;
     color: #fff;
 }
 
 ul.social-icons > li a:hover {
-    background-color: #023669;
+    background-color: #036606;
     border: 2px solid #f5dd25;
     color: #f5dd25 !important;
 }
@@ -566,8 +566,8 @@ Pagination
 
 .pagination > .active > a,
 .pagination > .active > span {
-    background-color: #023669;
-    border-color: #023669;
+    background-color: #036606;
+    border-color: #036606;
 }
 
 .pagination > li > a,
@@ -590,7 +590,7 @@ Top Info
 */
 
 #sp-top-info {
-    background-color: #033566;
+    background-color: #036606;
     color: #ffffff;
     padding: 8px 0;
 }
@@ -609,7 +609,7 @@ Top Info
 }
 
 .sp-contact-info li i {
-    color: #023669;
+    color: #036606;
     display: block;
     float: left;
     font-size: 35px;
@@ -684,7 +684,7 @@ Header
 */
 
 .sp-megamenu-parent > li > a {
-    color: #023669;
+    color: #036606;
     display: inline-block;
     font-family: Montserrat;
     font-size: 17px;
@@ -760,7 +760,7 @@ Header
 }
 
 .sp-megamenu-parent .sp-dropdown .sp-dropdown-inner {
-    background: #023669 none repeat scroll 0 0;
+    background: #036606 none repeat scroll 0 0;
     border-top: 3px solid #f5dd25;
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
 }
@@ -797,7 +797,7 @@ Header
 
 .sp-megamenu-parent > li.active > a,
 .sp-megamenu-parent > li:hover > a {
-    color: #023669;
+    color: #036606;
 }
 
 #offcanvas-toggler {
@@ -987,7 +987,7 @@ ul#offcanvas-inner-menu > li.deeper.parent:hover > ul.nav-child {
 }
 
 ul#offcanvas-inner-menu > li.deeper.parent:hover > a {
-    background-color: #023669;
+    background-color: #036606;
     color: #fff;
 }
 
@@ -1073,7 +1073,7 @@ Breadcrumb
 */
 
 #breadcrumb {
-    background: #023669 none repeat scroll 0 0;
+    background: #036606 none repeat scroll 0 0;
     padding: 40px 0;
 }
 
@@ -1116,7 +1116,7 @@ Action
 }
 
 .action .action-block h2 {
-    color: #033566;
+    color: #036606;
     font-size: 36px;
     font-weight: 700;
     line-height: 36px;
@@ -1142,14 +1142,14 @@ Services
 }
 
 #services .service-block h3 {
-    color: #033566;
+    color: #036606;
     font-size: 20px;
     font-weight: 700;
     line-height: 20px;
 }
 
 .service-list .media-body .title {
-    color: #033566;
+    color: #036606;
     font-size: 14px;
     font-weight: 600;
     line-height: 14px;
@@ -1158,7 +1158,7 @@ Services
 }
 
 .service-list .media-body .title a {
-    color: #033566;
+    color: #036606;
 }
 
 .service-list .pull-left {
@@ -1182,7 +1182,7 @@ Services
 }
 
 #single-service .service-detail h2 {
-    color: #033566;
+    color: #036606;
     font-size: 30px;
     font-weight: 600;
     line-height: 30px;
@@ -1191,7 +1191,7 @@ Services
 }
 
 #about .about-list:hover .sppb-icon {
-    background-color: #023669;
+    background-color: #036606;
     color: #fff;
 }
 
@@ -1217,7 +1217,7 @@ Services
 }
 
 #accordion .panel-title a {
-    background-color: #023669;
+    background-color: #036606;
     border-radius: 3px;
     box-shadow: 1px 2px 7.28px 0.72px rgba(0, 0, 0, 0.08);
     color: #fff;
@@ -1265,7 +1265,7 @@ Services- slider
 }
 
 #slider.flexslider .flex-direction-nav .flex-prev {
-    background-color: #023669;
+    background-color: #036606;
     color: #f5dd25;
     left: -50px !important;
     top: 50%;
@@ -1273,7 +1273,7 @@ Services- slider
 }
 
 #slider.flexslider .flex-direction-nav .flex-next {
-    background-color: #023669;
+    background-color: #036606;
     color: #f5dd25;
     right: -50px !important;
     top: 50%;
@@ -1345,7 +1345,7 @@ Services- slider
 }
 
 .ss-block #carousel .flex-direction-nav li.flex-nav-next a {
-    background-color: #023669;
+    background-color: #036606;
     bottom: 20px;
     color: #f5dd25;
     height: 30px;
@@ -1379,7 +1379,7 @@ Services- slider
 }
 
 .ss-block #carousel .flex-direction-nav li.flex-nav-prev a {
-    background-color: #023669;
+    background-color: #036606;
     bottom: 25px;
     color: #f5dd25;
     height: 30px;
@@ -1452,7 +1452,7 @@ Portfolios
 .sp-simpleportfolio .sp-simpleportfolio-filter > ul > li.active > a,
 .sp-simpleportfolio .sp-simpleportfolio-filter > ul > li > a:hover {
     background-color: transparent !important;
-    color: #023669;
+    color: #036606;
     text-decoration: underline;
 }
 
@@ -1466,7 +1466,7 @@ Portfolios
 .sp-simpleportfolio-btns a {
     background: #fff none repeat scroll 0 0 !important;
     border-radius: 3px !important;
-    color: #023669 !important;
+    color: #036606 !important;
     font-weight: normal;
 }
 
@@ -1505,7 +1505,7 @@ About
 */
 
 #about .about-block h2 {
-    color: #033566;
+    color: #036606;
     font-size: 35px;
     font-weight: 600;
     line-height: 35px;
@@ -1513,7 +1513,7 @@ About
 }
 
 #about .about-block .heading h2 {
-    color: #033566;
+    color: #036606;
     font-size: 35px;
     font-weight: 600;
     line-height: 35px;
@@ -1522,7 +1522,7 @@ About
 }
 
 #about .about-block h3 {
-    color: #023669;
+    color: #036606;
     font-size: 20px;
     font-weight: 600;
     line-height: 20px;
@@ -1548,7 +1548,7 @@ About
 }
 
 .about-list .sppb-media-body .title {
-    color: #033566;
+    color: #036606;
     font-size: 15px;
     font-weight: 600;
     line-height: 15px;
@@ -1665,7 +1665,7 @@ Blog
 }
 
 .recent-news article .article-title a {
-    color: #023669;
+    color: #036606;
 }
 
 article .meta i {
@@ -1726,9 +1726,9 @@ article .meta > li:not(:first-child) {
 }
 
 .inner #blog .icon {
-    border: 1px solid #023669;
+    border: 1px solid #036606;
     border-radius: 3px;
-    color: #023669;
+    color: #036606;
     display: block;
     font-size: 24px;
     height: 48px;
@@ -1792,10 +1792,10 @@ article .meta > li:not(:first-child) {
 
 .inner .blog-block a.readmore {
     background: transparent none repeat scroll 0 0;
-    border-color: #023669;
+    border-color: #036606;
     border-radius: 30px;
     border-width: 2px;
-    color: #023669;
+    color: #036606;
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
@@ -1804,7 +1804,7 @@ article .meta > li:not(:first-child) {
 }
 
 .inner .blog-block a.readmore:hover {
-    background: #023669 none repeat scroll 0 0;
+    background: #036606 none repeat scroll 0 0;
     color: #fff;
 }
 
@@ -1815,7 +1815,7 @@ article .meta > li:not(:first-child) {
     color: #111 !important;
 }
 blockquote {
-    border-color: #023669;
+    border-color: #036606;
     font-style: italic;
 }
 
@@ -1937,10 +1937,10 @@ blockquote {
 }
 ul.pagenav li a {
     background: transparent none repeat scroll 0 0;
-    border-color: #023669;
+    border-color: #036606;
     border-radius: 30px;
     border-width: 2px;
-    color: #023669;
+    color: #036606;
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
@@ -1949,7 +1949,7 @@ ul.pagenav li a {
 }
 
 ul.pagenav li a:hover {
-    background: #023669 none repeat scroll 0 0;
+    background: #036606 none repeat scroll 0 0;
     color: #fff;
 }
 
@@ -2068,7 +2068,7 @@ Footer upper
 */
 
 #sp-bottom {
-    background-color: #033566;
+    background-color: #011902;
     color: #ffffff;
     padding: 70px 0;
 }
@@ -2118,7 +2118,7 @@ Footer upper
 .tagspopular ul li a:hover {
     background-color: #fff;
     border-color: #fff;
-    color: #023669 !important;
+    color: #036606 !important;
 }
 
 #sp-bottom .textwidget p a:hover {
@@ -2237,7 +2237,7 @@ Contact us
 }
 
 .contact-block ul.address li i {
-    color: #023669;
+    color: #036606;
     margin-right: 10px;
 }
 
@@ -2255,9 +2255,9 @@ Contact us
 }
 
 #contact .sppb-person-social li a {
-    border: 1px solid #023669;
+    border: 1px solid #036606;
     border-radius: 3px !important;
-    color: #023669;
+    color: #036606;
     height: 35px;
     line-height: 35px !important;
     margin: 0;
@@ -2289,14 +2289,14 @@ aside .service li a {
 }
 
 aside .service li {
-    background-color: #023669;
+    background-color: #036606;
     margin-bottom: 1px;
     transition: all 200ms ease 0s;
 }
 
 aside .service li a:hover,
 aside .service li a:focus {
-    background-color: #023669;
+    background-color: #036606;
     color: #f5dd25;
 }
 
@@ -2320,7 +2320,7 @@ aside .widget:not(:last-child) {
 }
 
 aside .widget h3 {
-    color: #033566;
+    color: #036606;
     font-size: 24px;
     font-weight: 600;
     line-height: 24px;
@@ -2391,9 +2391,9 @@ aside.sidebar .widget.category ul li:not(:last-child) {
 }
 
 aside.sidebar .widget.tag-blog ul li a {
-    border: 1px solid #023669;
+    border: 1px solid #036606;
     border-radius: 30px;
-    color: #023669;
+    color: #036606;
     display: inline-block;
     font-weight: 400;
     line-height: 30px;
