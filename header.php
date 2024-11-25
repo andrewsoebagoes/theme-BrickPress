@@ -35,6 +35,7 @@
      <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/css/owl.transitions.css" type="text/css" />
      <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/css/sp-flickr-gallery.css" type="text/css" />
      <link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/css/style.css" />
+     <link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/style.css" />
      <!--Jquery-->
      <script src="<?= get_template_directory_uri() ?>/js/jQuery.js" type="text/javascript"></script>
      <title><?php bloginfo('name'); ?></title>

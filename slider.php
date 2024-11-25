@@ -36,7 +36,7 @@
                       src="<?php echo get_template_directory_uri(); ?>/images/slider-1.jpg"
                       alt="portfolio-6-1140x760"
                       data-bgposition="center center"
-                      data-bgfit="cover"
+                      data-bgfit="contain"
                       data-bgrepeat="no-repeat"
                     />
                     <!-- LAYERS -->
@@ -100,8 +100,8 @@
                     <img
                       src="<?php echo get_template_directory_uri(); ?>/images/slider-2.jpg"
                       alt="fullscreen3"
-                      data-bgposition="center bottom"
-                      data-bgfit="cover"
+                      data-bgposition="center center"
+                      data-bgfit="contain"
                       data-bgrepeat="no-repeat"
                     />
                     <!-- LAYERS -->
@@ -144,7 +144,7 @@
                       src="<?php echo get_template_directory_uri(); ?>/images/slider-3.webp"
                       alt="shutterstock_9053485"
                       data-bgposition="center center"
-                      data-bgfit="cover"
+                      data-bgfit="contain"
                       data-bgrepeat="no-repeat"
                     />
                     <!-- LAYERS -->
