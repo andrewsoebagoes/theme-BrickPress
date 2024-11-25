@@ -111,9 +111,8 @@
                                    <h1>
                                         <img
                                              class="sp-default-logo"
-                                             src="<?php echo get_template_directory_uri(); ?>/images/logoasahan.png"
-                                             alt="logoasahan"
-                                             width="70px" />
+                                             src="<?php echo get_template_directory_uri(); ?>/images/logo-bapperida-asahan.png"
+                                             alt="Logo Bapperida Asahan" />
                                    </h1>
                               </a>
                          </div>
