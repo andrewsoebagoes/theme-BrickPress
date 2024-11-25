@@ -43,12 +43,6 @@
 
      <?php wp_head(); ?>
 
-     <style>
-          .inner #blog article.blog-block {
-    box-shadow: 1px 2px 7.28px 0.72px rgba(0, 0, 0, 0.08);
-    margin-bottom: 50px;
-}
-     </style>
 </head>
 
 <body <?php body_class(); ?>>

@@ -2,6 +2,16 @@
 
 
 <?php get_slider() ?>
+<section class="action">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 action-block">
+        <h2 class="title">do you need expert to build your dream projects?</h2>
+      </div>
+
+    </div>
+  </div>
+</section>
 <!--Berita-->
 <section class="recent-news space">
   <div class="container">
@@ -9,7 +19,7 @@
       <h2 class="title">Berita</h2>
     </div>
     <div class="row">
-    <?php
+      <?php
       $args = array(
         'post_type'     =>  'post',
         'post_status'   =>  'publish',
@@ -23,36 +33,36 @@
         while ($posts->have_posts()) {
           $posts->the_post();
       ?>
-      <article class="col-sm-6 news-block">
-        <div class="article-thumb">
-          <a href="<?php the_permalink() ?>" target="_parent">
-          <?php if (get_the_post_thumbnail_url()): ?>
-              <img class="img-responsive" src="<?= get_the_post_thumbnail_url() ?>" alt="">
-              <?php endif ?>
-          </a>
-        </div>
-        <div class="article-info">
-          <h3 class="article-title">
-            <a href="<?php the_permalink() ?>" target="_parent"><?php the_title() ?></a>
-          </h3>
-          <ul class="meta">
-            <li> <i class="fa fa-calendar"></i>
-              <span class="sppb-meta-date"><?= get_the_date('l, j F Y') ?></span>
-            </li>
-            <li> <i class="fa fa-user"></i>
-              <span class="sppb-meta-author"><?php the_author() ?></span>
-            </li>
-          </ul>
-          <p><?= wp_trim_words(get_the_content(), 20)?></p>
-        </div>
-      </article>
+          <article class="col-sm-6 news-block">
+            <div class="article-thumb">
+              <a href="<?php the_permalink() ?>" target="_parent">
+                <?php if (get_the_post_thumbnail_url()): ?>
+                  <img class="img-responsive" src="<?= get_the_post_thumbnail_url() ?>" alt="">
+                <?php endif ?>
+              </a>
+            </div>
+            <div class="article-info">
+              <h3 class="article-title">
+                <a href="<?php the_permalink() ?>" target="_parent"><?php the_title() ?></a>
+              </h3>
+              <ul class="meta">
+                <li> <i class="fa fa-calendar"></i>
+                  <span class="sppb-meta-date"><?= get_the_date('l, j F Y') ?></span>
+                </li>
+                <li> <i class="fa fa-user"></i>
+                  <span class="sppb-meta-author"><?php the_author() ?></span>
+                </li>
+              </ul>
+              <p><?= wp_trim_words(get_the_content(), 20) ?></p>
+            </div>
+          </article>
       <?php
         }
         wp_reset_postdata();
       }
       ?>
       <div class="col-sm-6 blog-list">
-      <?php
+        <?php
         $args = array(
           'post_type'     =>  'post',
           'post_status'   =>  'publish',
@@ -66,36 +76,40 @@
           while ($posts->have_posts()) {
             $posts->the_post();
         ?>
-        <article class="col-sm-12 news-block no-padding">
-          <div class="article-thumb pull-left">
-          <?php if (get_the_post_thumbnail_url()): ?>
-            <a href="<?php the_permalink() ?>" target="_parent">
-                <img class="img-responsive" src="<?= get_the_post_thumbnail_url() ?>" width="90px">
-               
-              </a>
-              <?php endif ?>
-          </div>
-          <div class="article-info">
-            <h3 class="article-title">
-              <a href="<?php the_permalink() ?>" target="_parent"><?php the_title() ?></a>
-            </h3>
-            <ul class="meta">
-              <li> <i class="fa fa-calendar"></i>
-                <span class="sppb-meta-date"><?= get_the_date('l, j F Y') ?></span>
-              </li>
-              <li> <i class="fa fa-user"></i>
-                <span class="sppb-meta-author"><?php the_author() ?></span>
-              </li>
-            </ul>
-            <p><?= wp_trim_words(get_the_content(), 10) ?></p>
-          </div>
-        </article>
+            <article class="col-sm-12 news-block no-padding">
+              <div class="article-thumb pull-left">
+                <?php if (get_the_post_thumbnail_url()): ?>
+                  <a href="<?php the_permalink() ?>" target="_parent">
+                    <img class="img-responsive" src="<?= get_the_post_thumbnail_url() ?>" width="90px">
+                  </a>
+                <?php endif ?>
+              </div>
+              <div class="article-info">
+                <h3 class="article-title">
+                  <a href="<?= the_permalink() ?>"><?php the_title() ?></a>
+                </h3>
+                <ul class="meta">
+                  <li> <i class="fa fa-user"></i>
+                    <span class="sppb-meta-author"><?php the_author() ?></span>
+                  </li>
+                  <li> <i class="fa fa-calendar"></i>
+                    <span class="sppb-meta-date"><?= get_the_date('l, j F Y') ?></span>
+                  </li>
+                </ul>
+                <p><?= wp_trim_words(get_the_content(), 10) ?></p>
+              </div>
+            </article>
+            
         <?php
           }
-          wp_reset_postdata();
+          // wp_reset_postdata();
         }
         ?>
-      <div class="button">
+        
+      </div>
+      
+    </div>
+    <div class="button">
           <?php
           // Ambil informasi kategori "berita"
           $category = get_category_by_slug('berita'); // Ganti 'berita' dengan slug kategori Anda
@@ -109,8 +123,6 @@
             <p>Kategori tidak ditemukan.</p>
           <?php endif; ?>
         </div>
-      </div>
-    </div>
   </div>
 </section>
 <!--Publikasi-->
