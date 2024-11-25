@@ -38,7 +38,6 @@
      <link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/style.css" />
      <!--Jquery-->
      <script src="<?= get_template_directory_uri() ?>/js/jQuery.js" type="text/javascript"></script>
-     <title><?php bloginfo('name'); ?></title>
 
      <link rel="shortcut icon" href="<?= get_template_directory_uri() ?>/images/logoasahan.png" type="image/x-icon">
 
