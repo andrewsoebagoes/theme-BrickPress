@@ -21,9 +21,10 @@
           <?php
           $categories = get_categories();
           foreach ($categories as $category) {
+            if($category->name == 'Slider') continue;
           ?>
             <li>
-              <i class="ti-arrow-right"></i
+              <i class="ti-arrow-right"></i>
                 <a href="<?= get_category_link($category->term_id) ?>"><?= $category->name  ?> <span>(<?= $category->category_count ?>)</span></a>
             </li>
           <?php
@@ -87,12 +88,19 @@
   src="<?= get_template_directory_uri() ?>/js/jquery.shuffle.modernizr.min.js"
   type="text/javascript"></script>
 <script src="<?= get_template_directory_uri() ?>/js/featherlight.min.js" type="text/javascript"></script>
-<script src="<?= get_template_directory_uri() ?>/js/spsimpleportfolio.js" type="text/javascript"></script>
 <script src="<?= get_template_directory_uri() ?>/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
-<script src="<?= get_template_directory_uri() ?>/js/smoothscroll.js" type="text/javascript"></script>
-<script src="<?= get_template_directory_uri() ?>/js/owl.carousel.js" type="text/javascript"></script>
-<script src="<?= get_template_directory_uri() ?>/js/sp-flickr-gallery.js" type="text/javascript"></script>
-<script src="<?= get_template_directory_uri() ?>/js/main.js" type="text/javascript"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+      jQuery('.slick-slider').slick({
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        autoplay: true,
+        dots: true,
+        arrows: true
+      });
+    </script>
 </body>
 
 </html>

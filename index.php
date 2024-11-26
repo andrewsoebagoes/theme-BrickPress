@@ -5,8 +5,8 @@
 <section class="action">
   <div class="container">
     <div class="row">
-      <div class="col-sm-9 action-block">
-        <h2 class="title">do you need expert to build your dream projects?</h2>
+      <div class="col-sm-12 action-block text-center">
+        <h2 class="title">Kerja keras bersama untuk menuju masyarakat adil dan makmur</h2>
       </div>
 
     </div>
