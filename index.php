@@ -99,32 +99,33 @@
                 <p><?= wp_trim_words(get_the_content(), 10) ?></p>
               </div>
             </article>
-            
+
         <?php
           }
           // wp_reset_postdata();
         }
         ?>
-        
+
       </div>
-      
+
     </div>
     <div class="button">
-          <?php
-          // Ambil informasi kategori "berita"
-          $category = get_category_by_slug('berita'); // Ganti 'berita' dengan slug kategori Anda
-          if ($category) :
-            $category_link = get_category_link($category->term_id); // Dapatkan URL kategori
-          ?>
-            <a target="_parent" href="<?= esc_url($category_link) ?>" class="simple">
-              Lihat Semua Berita <i class="fa fa-long-arrow-right"></i>
-            </a>
-          <?php else : ?>
-            <p>Kategori tidak ditemukan.</p>
-          <?php endif; ?>
-        </div>
+      <?php
+      // Ambil informasi kategori "berita"
+      $category = get_category_by_slug('berita'); // Ganti 'berita' dengan slug kategori Anda
+      if ($category) :
+        $category_link = get_category_link($category->term_id); // Dapatkan URL kategori
+      ?>
+        <a target="_parent" href="<?= esc_url($category_link) ?>" class="simple">
+          Lihat Semua Berita <i class="fa fa-long-arrow-right"></i>
+        </a>
+      <?php else : ?>
+        <p>Kategori tidak ditemukan.</p>
+      <?php endif; ?>
+    </div>
   </div>
 </section>
+
 <!--Publikasi-->
 <section id="services" class="space bg-color">
   <div class="container">
@@ -134,13 +135,13 @@
       </div>
       <?php
       $args = array(
-        'post_type'     =>  'post',
+        'post_type'     =>  'publikasi',
         'post_status'   =>  'publish',
         'posts_per_page' =>  2,
-        'category_name' =>  'Publikasi',
         'orderby'       => 'date',
         'order'         => 'DESC'
       );
+
       $posts = new WP_Query($args);
       if ($posts->have_posts()) {
         while ($posts->have_posts()) {
@@ -157,7 +158,7 @@
             <p>
               <?= wp_trim_words(get_the_content(), 10) ?>
             </p>
-            <a target="_parent" href="<?php the_permalink() ?>" class="simple">Read More<i class="fa fa-long-arrow-right"></i>
+            <a target="_parent" href="<?php the_permalink(); ?>" class="simple">Lihat Selengkapnya<i class="fa fa-long-arrow-right"></i>
             </a>
           </div>
 
@@ -170,12 +171,9 @@
       <div class="service-block col-sm-4">
         <?php
         $args = array(
-          'post_type'     =>  'post',
-          'post_status'   =>  'publish',
-          'posts_per_page' =>  2,
-          'category_name' =>  'Publikasi',
-          'orderby'       => 'date',
-          'order'         => 'DESC'
+          'post_type'      => 'publikasi',
+          'posts_per_page' => 4,
+          'order'          => 'DESC',
         );
         $posts = new WP_Query($args);
         if ($posts->have_posts()) {
@@ -192,7 +190,6 @@
                 <h4 class="title">
                   <a href="<?php the_permalink() ?>" target="_parent"><?php the_title() ?></a>
                 </h4>
-
                 <p>
                   <?= wp_trim_words(get_the_content(), 3) ?>
                 </p>
@@ -206,17 +203,17 @@
 
         <div class="button">
           <?php
-          // Ambil informasi kategori "Publikasi"
-          $category = get_category_by_slug('Publikasi'); // Ganti 'Publikasi' dengan slug kategori Anda
-          if ($category) :
-            $category_link = get_category_link($category->term_id); // Dapatkan URL kategori
+          // Dapatkan URL arsip untuk CPT 'publikasi'
+          $archive_link = get_post_type_archive_link('publikasi'); // Ganti 'publikasi' dengan slug CPT Anda
+          if ($archive_link) :
           ?>
-            <a target="_parent" href="<?= esc_url($category_link) ?>" class="simple">
+            <a target="_parent" href="<?= esc_url($archive_link) ?>" class="simple">
               Lihat Semua Publikasi <i class="fa fa-long-arrow-right"></i>
             </a>
           <?php else : ?>
-            <p>Kategori tidak ditemukan.</p>
+            <p>Arsip Publikasi tidak ditemukan.</p>
           <?php endif; ?>
+
         </div>
 
       </div>

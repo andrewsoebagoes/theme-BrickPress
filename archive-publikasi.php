@@ -11,7 +11,7 @@
                         single_cat_title();
                     } else {
                         // Teks default jika bukan halaman kategori
-                        echo 'Berita';
+                        echo 'Publikasi';
                     }
                     ?>
                 </h2>
@@ -53,15 +53,7 @@
                                             <li>
                                                 <a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="Article Category">
                                                     <i class="fa fa-folder-open-o"></i>
-                                                    <?php
-                                                    $categories = get_the_category();
-                                                    if (!empty($categories)) {
-
-                                                        foreach ($categories as $category) {
-                                                            echo '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a> ';
-                                                        }
-                                                    }
-                                                    ?>
+                                                    Publikasi
                                                 </a>
                                             </li>
                                             <li data-toggle="tooltip" data-placement="top" title="" data-original-title="Published date">

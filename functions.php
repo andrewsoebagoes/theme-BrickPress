@@ -25,6 +25,39 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
     }
 }
 
+// Publikasi 
+
+function register_publikasi_post_type() {
+    $labels = array(
+        'name'               => __('Publikasi', 'textdomain'),
+        'singular_name'      => __('Publikasi', 'textdomain'),
+        'menu_name'          => __('Publikasi', 'textdomain'),
+        'name_admin_bar'     => __('Publikasi', 'textdomain'),
+        'add_new'            => __('Tambah Publikasi', 'textdomain'),
+        'add_new_item'       => __('Tambah Publikasi Baru', 'textdomain'),
+        'new_item'           => __('Publikasi Baru', 'textdomain'),
+        'edit_item'          => __('Edit Publikasi', 'textdomain'),
+        'view_item'          => __('Lihat Publikasi', 'textdomain'),
+        'all_items'          => __('Semua Publikasi', 'textdomain'),
+        'search_items'       => __('Cari Publikasi', 'textdomain'),
+        'not_found'          => __('Publikasi Tidak Ditemukan', 'textdomain'),
+        'not_found_in_trash' => __('Publikasi Tidak Ditemukan di Sampah', 'textdomain'),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'has_archive'        => true,
+        'rewrite'            => array('slug' => 'publikasi'),
+        'menu_icon'          => 'dashicons-media-document',
+        'supports'           => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
+    );
+
+    register_post_type('publikasi', $args);
+}
+
+add_action('init', 'register_publikasi_post_type');
+
 
 
 function custom_menu_item_classes($classes, $item, $args)

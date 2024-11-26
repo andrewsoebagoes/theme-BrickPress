@@ -43,33 +43,7 @@
 
      <?php wp_head(); ?>
 
-     <!-- <style>
-          .sp-megamenu-parent {
-               list-style: none;
-               padding: 0;
-               display: flex;
-          }
-
-          .sp-megamenu-parent>li {
-               margin-right: 20px;
-          }
-
-          .sp-megamenu-parent>li>a {
-               text-decoration: none;
-               color: #000;
-          }
-
-          .sp-megamenu-parent .submenu {
-               display: none;
-               position: absolute;
-               background: #fff;
-          }
-
-          .sp-megamenu-parent>li:hover .submenu {
-               display: block;
-          }
-     </style> -->
-
+     
 </head>
 
 <body <?php body_class(); ?>>
@@ -155,7 +129,7 @@
                                              'fallback_cb'    => false
                                         ));
                                         ?>
-                                       
+
                                    </div>
                               </div>
                          </div>

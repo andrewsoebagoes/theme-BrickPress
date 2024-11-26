@@ -19,42 +19,42 @@
             class="rev_slider fullwidthabanner"
             style="display: none; max-height: 550px; height: 550px">
             <ul>
-            <?php
-      $args = array(
-        'post_type'     =>  'post',
-        'post_status'   =>  'publish',
-        'posts_per_page' =>  3,
-        'category_name' =>  'slider',
-        'orderby'       => 'date',
-        'order'         => 'DESC'
-      );
-      $posts = new WP_Query($args);
-      if ($posts->have_posts()) {
-        while ($posts->have_posts()) {
-          $posts->the_post();
-      ?>
-               
-                                <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-thumb="<?= get_the_post_thumbnail_url() ?>" data-saveperformance="off" data-title="Slide">
-                                    <!-- MAIN IMAGE -->
-                                    <img src="<?= get_the_post_thumbnail_url() ?>" alt="fullscreen3" data-bgposition="center center" data-bgfit="contain" data-bgrepeat="no-repeat">
-                                    <!-- LAYERS -->
-                                    <!-- LAYER NR. 1 -->
-                                    <div style="text-transform: capitalize;" class="tp-caption tp-fade tp-resizeme" data-x="88" data-y="337" data-speed="300" data-start="500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;"><a href='#' class='sppb-btn sppb-btn-default sppb-btn-'>Lihat Selengkapnya</a>
-                                    </div>
-                                    <!-- LAYER NR. 2 -->
-                                    <div class="tp-caption smalltext tp-fade tp-resizeme" data-x="86" data-y="128" data-speed="300" data-start="500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
-                                        <br> <?php the_title() ?>
-                                    </div>
-                                    <!-- LAYER NR. 3 -->
-                                    <div class="tp-caption small_text tp-fade tp-resizeme" data-x="90" data-y="234" data-speed="300" data-start="500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;"><?= wp_trim_words(get_the_content(), 10) ?>
-                                    </div>
-                                 
-                                </li>
-                  <?php
-        }
-        wp_reset_postdata();
-      }
-      ?>
+              <?php
+              $args = array(
+                'post_type'     =>  'post',
+                'post_status'   =>  'publish',
+                'posts_per_page' =>  3,
+                'category_name' =>  'slider',
+                'orderby'       => 'date',
+                'order'         => 'DESC'
+              );
+              $posts = new WP_Query($args);
+              if ($posts->have_posts()) {
+                while ($posts->have_posts()) {
+                  $posts->the_post();
+              ?>
+                  <li class="tp-slide" data-transition="random" data-slotamount="7" data-masterspeed="300" data-thumb="<?= get_the_post_thumbnail_url() ?>" data-saveperformance="off" data-title="Slide">
+                    <!-- MAIN IMAGE -->
+
+                    <img src="<?= get_the_post_thumbnail_url() ?>" alt="fullscreen3" data-bgposition="center center" data-bgfit="contain" data-bgrepeat="no-repeat">
+                    <!-- LAYERS -->
+                    <!-- LAYER NR. 1 -->
+                    <div style="text-transform: capitalize;" class="tp-caption tp-fade tp-resizeme" data-x="88" data-y="337" data-speed="300" data-start="500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;"><a href='<?php the_permalink() ?>' class='sppb-btn sppb-btn-default sppb-btn-'>Lihat Selengkapnya</a>
+                    </div>
+                    <!-- LAYER NR. 2 -->
+                    <div style="background-color:rgba(0, 0, 0, 0.5);padding:5px;border-radius:5px;" class="tp-caption smalltext tp-fade tp-resizeme" data-x="86" data-y="128" data-speed="300" data-start="500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
+                      <?= wp_trim_words(get_the_title(), 3) ?>
+                    </div>
+                    <!-- LAYER NR. 3 -->
+                    <div style="background-color:rgba(0, 0, 0, 0.5);padding:5px;border-radius:5px;" class="tp-caption small_text tp-fade tp-resizeme" data-x="90" data-y="234" data-speed="300" data-start="500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;"><?= wp_trim_words(get_the_content(), 10) ?>
+                    </div>
+
+                  </li>
+              <?php
+                }
+                wp_reset_postdata();
+              }
+              ?>
             </ul>
 
 
