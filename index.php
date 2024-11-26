@@ -109,7 +109,7 @@
     <div class="button">
       <?php
       // Ambil informasi kategori "berita"
-      $category = get_category_by_slug('berita'); // Ganti 'berita' dengan slug kategori Anda
+      $category = get_category_by_slug('informasi'); // Ganti 'berita' dengan slug kategori Anda
       if ($category) :
         $category_link = get_category_link($category->term_id); // Dapatkan URL kategori
       ?>
