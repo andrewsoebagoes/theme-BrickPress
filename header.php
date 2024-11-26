@@ -43,7 +43,7 @@
 
      <?php wp_head(); ?>
 
-     
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -119,16 +119,17 @@
                          <div id="sp-menu" class="col-sm-12 col-md-12">
                               <div class="sp-column">
                                    <div class="sp-megamenu-wrapper">
-                                        <!-- <a id="offcanvas-toggler" href="#"><i class="fa fa-bars"></i></a> -->
+                                        <a id="offcanvas-toggler" href="#"><i class="fa fa-bars"></i></a>
                                         <?php
                                         wp_nav_menu(array(
                                              'theme_location' => 'header-menu',
                                              'container'      => false,               // Tidak ada elemen pembungkus
-                                             'menu_class'     => 'sp-megamenu-parent menu-fade-up hidden-xs',             // Kelas untuk `<ul>`
+                                             'menu_class'     => 'sp-megamenu-parent menu-fade-up hidden-xs', // Kelas untuk `<ul>`
                                              'walker'         => new Custom_Walker_Nav_Menu(), // Gunakan walker custom
-                                             'fallback_cb'    => false
+                                             'fallback_cb'    => false,              // Jangan tampilkan menu default jika menu kosong
                                         ));
                                         ?>
+
 
                                    </div>
                               </div>
