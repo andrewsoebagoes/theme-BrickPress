@@ -1,4 +1,17 @@
 <?php get_header() ?>
+<style>
+a.page-numbers {
+    padding: 10px;
+    border: 1px solid;
+}
+
+span.page-numbers.current, a.page-numbers:hover {
+    padding: 10px;
+    order: 1px solid;
+    background-color:#036606;
+    color: #FFF;
+}
+</style>
 <!--Breadcrumb-->
 <section id="breadcrumb" class="space">
     <div class="container">
