@@ -64,7 +64,7 @@
           while ($posts->have_posts()) {
             $posts->the_post();
         ?>
-            <div class="slider-item" style="background-image:url(<?= get_the_post_thumbnail_url() ?>)">
+            <div class="slider-item" style="background-image:url(<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>)">
               <div class="slider-content">
                 <h1 style="margin:0;"><?= wp_trim_words(get_the_title(), 8) ?></h1>
                 <?= wp_trim_words(get_the_content(), 50) ?>
