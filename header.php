@@ -8,8 +8,8 @@
      <!-- Basic Page Needs
   ================================================== -->
 
-     <meta name="keywords" content="HTML5 Template" />
-     <meta name="description" content=" HTML5 Template - v1.0" />
+     <meta name="keywords" content="BAPPERIDA ASAHAN" />
+     <meta name="description" content="BAPPERIDA KABUPATEN ASAHAN, SUMATERA UTARA" />
      <meta name="author" content="" />
      <!-- Mobile Specific Meta
     ================================================== -->
@@ -125,7 +125,7 @@
                                              'theme_location' => 'header-menu',
                                              'container'      => false,               // Tidak ada elemen pembungkus
                                              'menu_class'     => 'sp-megamenu-parent menu-fade-up hidden-xs', // Kelas untuk `<ul>`
-                                             'walker'         => new Custom_Walker_Nav_Menu(), // Gunakan walker custom
+                                             'walker'         => new bs4Navwalker(), // Gunakan walker custom
                                              'fallback_cb'    => false,              // Jangan tampilkan menu default jika menu kosong
                                         ));
                                         ?>

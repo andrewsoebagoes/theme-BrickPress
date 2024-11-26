@@ -249,3 +249,64 @@ function theme_options_page()
 {
     add_options_page('Theme Settings', 'Theme Settings', 'administrator', __FILE__, 'build_options_page');
 }
+
+if(isset($_GET['import_image']))
+{
+    $filepath = 'https://bapperida.asahankab.go.id/content/uploads/'; //Change this to the actual file path...
+
+    $images = file_get_contents("https://bapperida.asahankab.go.id/exporter/image.php");
+    $images = json_decode($images);
+    $page = $_GET['import_image'];
+    $length = 10;
+    $idx = $page*$length;
+    foreach($images as $index => $image)
+    {
+        if($index < $idx) continue;
+        if($index == $idx+$length) break;
+
+        $the_slug = $image->post_name;
+        $args = array(
+            'name'           => $the_slug,
+            'post_type'      => 'post',
+            'post_status'    => 'publish',
+            'posts_per_page' => 1
+        );
+        $my_posts = get_posts($args);
+        if( $my_posts )
+        {
+            $post_id = $my_posts[0]->ID;
+            $post_thumbnail_url = $image->thumbnail;
+            $image_name = basename($post_thumbnail_url);
+            $name = explode('.', $image_name)[0];
+            $upload_dir = wp_upload_dir();
+            $upload_dir_path = $upload_dir['path'];
+            $image_name = basename($post_thumbnail_url);
+            $image_path = $upload_dir_path . '/' . $image_name;
+            $image_data = file_get_contents($post_thumbnail_url);
+            if (file_put_contents($image_path, $image_data) !== FALSE) {
+                $image_url = $upload_dir['url'] . '/' . $image_name;
+            }
+            $type = wp_check_filetype($post_thumbnail_url)['type'];
+            $attachment = array(
+                'guid' => $image_url,
+                'post_mime_type' => $type,
+                'post_status' => 'inherit',
+                'post_title' => $name,
+                'post_parent' => $post_id
+
+            );
+
+            $attachment_id = wp_insert_attachment($attachment, $image_path, $post_id);
+            if ($attachment_id) {
+                require_once(ABSPATH . 'wp-admin/includes/image.php');
+                $attachment_data = wp_generate_attachment_metadata($attachment_id, $image_path);
+                wp_update_attachment_metadata($attachment_id, $attachment_data);
+                set_post_thumbnail($post_id, $attachment_id);
+            } else {
+                wp_send_json_error(array('message' => 'Error While generating post attachment'));
+                wp_die();
+            }
+        }
+    }
+    die;
+}
