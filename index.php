@@ -217,7 +217,7 @@
 
 
 <!--Kegiatan-->
-<section id="about" class="space bg-color">
+<section id="about" class="space">
   <div class="container">
     <div class="row">
       <div class="col-sm-12 no-padding main-heading text-center">
