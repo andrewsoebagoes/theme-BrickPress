@@ -244,7 +244,7 @@
             <a href="<?php the_permalink() ?>" target="_parent">
               <h3 class="title"><?php the_title() ?></h3>
             </a>
-            <p>
+            <p style="height:180px;overflow:hidden;">
               <?= wp_trim_words(get_the_content(), 50) ?> ...
             </p>
             <a target="_parent" href="<?php the_permalink() ?>" class="simple">Read More<i class="fa fa-long-arrow-right"></i>
