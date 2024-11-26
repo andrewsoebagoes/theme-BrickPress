@@ -33,23 +33,24 @@
         while ($posts->have_posts()) {
           $posts->the_post();
       ?>
-               
-                                <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-thumb="<?= get_the_post_thumbnail_url() ?>" data-saveperformance="off" data-title="Slide">
-                                    <!-- MAIN IMAGE -->
-                                    <img src="<?= get_the_post_thumbnail_url() ?>" alt="fullscreen3" data-bgposition="center center" data-bgfit="contain" data-bgrepeat="no-repeat">
-                                    <!-- LAYERS -->
-                                    <!-- LAYER NR. 1 -->
-                                    <div style="text-transform: capitalize;" class="tp-caption tp-fade tp-resizeme" data-x="88" data-y="337" data-speed="300" data-start="500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;"><a href='#' class='sppb-btn sppb-btn-default sppb-btn-'>Lihat Selengkapnya</a>
-                                    </div>
-                                    <!-- LAYER NR. 2 -->
-                                    <div class="tp-caption smalltext tp-fade tp-resizeme" data-x="86" data-y="128" data-speed="300" data-start="500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
-                                        <br> <?php the_title() ?>
-                                    </div>
-                                    <!-- LAYER NR. 3 -->
-                                    <div class="tp-caption small_text tp-fade tp-resizeme" data-x="90" data-y="234" data-speed="300" data-start="500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;"><?= wp_trim_words(get_the_content(), 10) ?>
-                                    </div>
-                                 
-                                </li>
+                  <li
+                    data-transition="random"
+                    data-slotamount="7"
+                    data-masterspeed="300"
+                    data-thumb="<?php echo esc_url($thumbnail); ?>"
+                    data-saveperformance="off"
+                    data-title="<?php echo esc_attr($title); ?>">
+                    <!-- MAIN IMAGE -->
+                    <img
+                      src="<?php echo esc_url($thumbnail); ?>"
+                      alt="<?php echo esc_attr($title); ?>"
+                      data-bgposition="center center"
+                      data-bgfit="contain"
+                      data-bgrepeat="no-repeat" />
+                    <!-- LAYERS -->
+                  
+                    
+                  </li>
                   <?php
         }
         wp_reset_postdata();

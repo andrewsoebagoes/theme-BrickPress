@@ -36,34 +36,34 @@ function custom_menu_item_classes($classes, $item, $args)
 }
 add_filter('nav_menu_css_class', 'custom_menu_item_classes', 10, 3);
 
-function register_slider_post_type()
-{
-    $labels = array(
-        'name'               => 'Sliders',
-        'singular_name'      => 'Slider',
-        'menu_name'          => 'Sliders',
-        'name_admin_bar'     => 'Slider',
-        'add_new'            => 'Add New',
-        'add_new_item'       => 'Add New Slider',
-        'new_item'           => 'New Slider',
-        'edit_item'          => 'Edit Slider',
-        'view_item'          => 'View Slider',
-        'all_items'          => 'All Sliders',
-        'search_items'       => 'Search Sliders',
-    );
+// function register_slider_post_type()
+// {
+//     $labels = array(
+//         'name'               => 'Sliders',
+//         'singular_name'      => 'Slider',
+//         'menu_name'          => 'Sliders',
+//         'name_admin_bar'     => 'Slider',
+//         'add_new'            => 'Add New',
+//         'add_new_item'       => 'Add New Slider',
+//         'new_item'           => 'New Slider',
+//         'edit_item'          => 'Edit Slider',
+//         'view_item'          => 'View Slider',
+//         'all_items'          => 'All Sliders',
+//         'search_items'       => 'Search Sliders',
+//     );
 
-    $args = array(
-        'labels'             => $labels,
-        'public'             => true,
-        'show_in_menu'       => true,
-        'supports'           => array('title', 'thumbnail'),
-        'menu_position'      => 20,
-        'menu_icon'          => 'dashicons-images-alt2',
-    );
+//     $args = array(
+//         'labels'             => $labels,
+//         'public'             => true,
+//         'show_in_menu'       => true,
+//         'supports'           => array('title', 'thumbnail'),
+//         'menu_position'      => 20,
+//         'menu_icon'          => 'dashicons-images-alt2',
+//     );
 
-    register_post_type('slider', $args);
-}
-add_action('init', 'register_slider_post_type');
+//     register_post_type('slider', $args);
+// }
+// add_action('init', 'register_slider_post_type');
 
 function enqueue_slider_assets()
 {
