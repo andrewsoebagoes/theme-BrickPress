@@ -23,7 +23,10 @@ class bs4Navwalker extends Walker_Nav_Menu
      */
     public function start_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<div class=\"dropdown-menu\">\n";
+        $output .= "\n$indent<div class=\"sp-dropdown sp-dropdown-main sp-menu-right\">\n";
+        $output .= "\n$indent<div class=\"sp-dropdown-inner\">\n";
+        $output .= "\n$indent<ul class=\"sp-dropdown-items nav-child unstyled small\">\n";
+        $output .= "\n$indent<li class=\"sp-menu-item \">\n";
     }
 
     /**
@@ -39,6 +42,9 @@ class bs4Navwalker extends Walker_Nav_Menu
      */
     public function end_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
+        $output .= "$indent</li>\n";
+        $output .= "$indent</ul>\n";
+        $output .= "$indent</div>\n";
         $output .= "$indent</div>\n";
     }
 
@@ -78,7 +84,7 @@ class bs4Navwalker extends Walker_Nav_Menu
         $class_names .= ' nav-item';
         
         if (in_array('menu-item-has-children', $classes)) {
-            $class_names .= ' dropdown';
+            $class_names .= ' dropdown sp-menu-item sp-has-child';
         }
 
         if (in_array('current-menu-item', $classes)) {
@@ -120,7 +126,7 @@ class bs4Navwalker extends Walker_Nav_Menu
 
         // New
         if ($depth === 0) {
-            $atts['class'] = 'nav-link';
+            $atts['class'] = 'nav-link deeper parent';
         }
 
         if ($depth === 0 && in_array('menu-item-has-children', $classes)) {
