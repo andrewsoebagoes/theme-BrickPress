@@ -60,15 +60,15 @@
     <div class="sp-module">
       <h3 class="sp-module-title">Menu</h3>
       <div class="sp-module-content">
-      <?php
-                                        wp_nav_menu(array(
-                                             'theme_location' => 'header-menu',
-                                             'container'      => false,               // Tidak ada elemen pembungkus
-                                             'menu_class'     => 'sp-megamenu-parent menu-fade-up hidden-xs', // Kelas untuk `<ul>`
-                                             'walker'         => new bs4Navwalker(), // Gunakan walker custom
-                                             'fallback_cb'    => false,              // Jangan tampilkan menu default jika menu kosong
-                                        ));
-                                        ?>
+        <?php
+        wp_nav_menu(array(
+          'theme_location' => 'header-menu',
+          'container'      => false,               // Tidak ada elemen pembungkus
+          'menu_class'     => 'nav menu', // Kelas untuk `<ul>`
+          'walker'         => new bs4Navwalker(), // Gunakan walker custom
+          'fallback_cb'    => false,              // Jangan tampilkan menu default jika menu kosong
+        ));
+        ?>
       </div>
     </div>
   </div>
