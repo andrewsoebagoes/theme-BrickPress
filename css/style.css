@@ -1609,11 +1609,6 @@ Counter
 */
 
 #counter {
-    background-attachment: fixed;
-    background-image: url("../images/5744351061_0ee7664c9e_b.jpg");
-    background-position: 50% 0;
-    background-repeat: no-repeat;
-    background-size: cover;
     padding: 30px 0 0;
 }
 

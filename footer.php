@@ -135,9 +135,45 @@ ksort($monthly_totals);
         datasets: [{
           label: 'Pengunjung',
           data: <?=json_encode(array_values($monthly_totals))?>,
+          borderColor:'rgb(4, 112, 9)',
+          backgroundColor:'rgba(4, 112, 9, 0.3)',
         }],
         labels: ['Januari', 'Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember']
-      }
+      },
+      options: { 
+            legend: {
+                labels: {
+                    fontColor: "rgb(4, 112, 9)",
+                    fontSize: 12
+                }
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        fontColor: "rgb(4, 112, 9)",
+                        fontSize: 12,
+                        stepSize: 60,
+                        beginAtZero: true
+                    },
+                    gridLines: {
+                        color: "rgba(0, 0, 0, 0)",
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        fontColor: "rgb(4, 112, 9)",
+                        fontSize: 12,
+                        stepSize: 60,
+                        beginAtZero: true,
+                        maxRotation: 90,
+                        minRotation: 90
+                    },
+                    gridLines: {
+                        color: "rgba(0, 0, 0, 0)",
+                    }
+                }]
+            }
+        }
     });
   }
 
