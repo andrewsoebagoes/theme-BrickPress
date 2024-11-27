@@ -154,8 +154,6 @@
             <p>
               <?= wp_trim_words(get_the_content(), 10) ?>
             </p>
-            <a target="_parent" href="<?php the_permalink(); ?>" class="simple">Lihat Selengkapnya<i class="fa fa-long-arrow-right"></i>
-            </a>
           </div>
 
       <?php

@@ -16,17 +16,11 @@
                     ?>
                 </h2>
             </div>
-            <!-- <div class="col-sm-6 breadcrumb-block text-right">
-                <ol class="breadcrumb">
-                    <li><span>You are here:</span><a href="index.html">Home</a></li>
-                    <li class="active">news</li>
-                </ol>
-            </div> -->
         </div>
     </div>
 </section>
 <!--Blog-->
-<section id="blog" class="space-100">
+<section id="blog" class="space">
     <div class="container">
         <div class="row">
             <div class="col-sm-8 blog-base">
@@ -93,7 +87,7 @@
             <aside class="col-sm-4 sidebar">
 
                 <div class="widget category">
-                    <h3 class="sp-module-title">Catagories</h3>
+                    <h3 class="sp-module-title">Categories</h3>
                     <ul class="categories-module">
                         <?php
                         $categories = get_categories();

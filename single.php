@@ -7,7 +7,7 @@
 				the_post();
 		?>
         <!--Blog-->
-        <section id="blog" class="space-100 single-blog">
+        <section id="blog" class="space single-blog">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 blog-base">
@@ -29,14 +29,14 @@
                                                 <a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="Article Category">
                                                     <i class="fa fa-folder-open-o"></i>
                                                     <?php
-																												$categories = get_the_category();
-																												if (!empty($categories)) {
+                                                    $categories = get_the_category();
+                                                    if (!empty($categories)) {
 
-																													foreach ($categories as $category) {
-																														echo '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a> ';
-																													}
-																												}
-																												?>
+                                                        foreach ($categories as $category) {
+                                                            echo '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a> ';
+                                                        }
+                                                    }
+                                                    ?>
                                                   </a>
                                             </li>
                                             <li data-toggle="tooltip" data-placement="top" title="" data-original-title="Published date">
@@ -50,21 +50,14 @@
                                 </div>
                                 <?php
 		}
-			?>
-                                <!-- <ul class="tags">
-                                    <li><span>Tags: </span><a href="/" class="label label-info" rel="tag" target="_parent">love</a></li>
-                                    <li><a href="/" class="label label-info" rel="tag" target="_parent">Creative</a></li>
-                                    <li><a href="/" class="label label-info" rel="tag" target="_parent">Board</a></li>
-                                    <li><a href="/" class="label label-info" rel="tag" target="_parent">Career</a></li>
-                                </ul> -->
-                               
+			?>                               
                                
                             </article>
                         </div>
                     </div>
                     <aside class="col-sm-4 sidebar">
                         <div class="widget category">
-                            <h3 class="sp-module-title">Catagories</h3>
+                            <h3 class="sp-module-title">Categories</h3>
                             <ul class="categories-module">
                             <?php
 							$categories = get_categories();

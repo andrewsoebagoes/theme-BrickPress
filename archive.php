@@ -29,17 +29,11 @@ span.page-numbers.current, a.page-numbers:hover {
                     ?>
                 </h2>
             </div>
-            <!-- <div class="col-sm-6 breadcrumb-block text-right">
-                <ol class="breadcrumb">
-                    <li><span>You are here:</span><a href="index.html">Home</a></li>
-                    <li class="active">news</li>
-                </ol>
-            </div> -->
         </div>
     </div>
 </section>
 <!--Blog-->
-<section id="blog" class="space-100">
+<section id="blog" class="space">
     <div class="container">
         <div class="row">
             <div class="col-sm-8 blog-base">
