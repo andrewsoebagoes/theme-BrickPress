@@ -18,3 +18,13 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 body.logged-in.admin-bar .body-innerwrapper {
     padding-top: 30px !important;
 }
+
+.dropdown-item {
+    display:block;
+    padding: 5px 10px;
+}
+
+.dropdown-item:hover {
+    background-color:#036606;
+    color:#FFF;
+}
