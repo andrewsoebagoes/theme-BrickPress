@@ -6,25 +6,6 @@
 			while(have_posts()){
 				the_post();
 		?>
-   <section id="breadcrumb" class="space">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 breadcrumb-block">
-                        <h2>
-                        <?php
-                    if (is_category()) {
-                        // Tampilkan nama kategori
-                        single_cat_title();
-                    } else {
-                        // Teks default jika bukan halaman kategori
-                        echo 'Publikasi';
-                    }
-                    ?>
-                        </h2>
-                    </div>
-                </div>
-            </div>
-        </section>
         <!--Blog-->
         <section id="blog" class="space-100 single-blog">
             <div class="container">
@@ -70,23 +51,18 @@
                                 <?php
 		}
 			?>
-                                <ul class="tags">
+                                <!-- <ul class="tags">
                                     <li><span>Tags: </span><a href="/" class="label label-info" rel="tag" target="_parent">love</a></li>
                                     <li><a href="/" class="label label-info" rel="tag" target="_parent">Creative</a></li>
                                     <li><a href="/" class="label label-info" rel="tag" target="_parent">Board</a></li>
                                     <li><a href="/" class="label label-info" rel="tag" target="_parent">Career</a></li>
-                                </ul>
+                                </ul> -->
                                
                                
                             </article>
                         </div>
                     </div>
                     <aside class="col-sm-4 sidebar">
-                        <div class="widget about">
-                            <img src="images/shutterstock_9833917.jpg" alt="shutterstock 9833917">
-                            <h3>About Us</h3>
-                            <p>Lorem ipsum dolor sit amet, nec in adipiscing purus luctus, urna pellentesque fringilla vel, non sed arcu integer, mauris ullamcorper ante ut non torquent.</p>
-                        </div>
                         <div class="widget category">
                             <h3 class="sp-module-title">Catagories</h3>
                             <ul class="categories-module">
@@ -102,62 +78,28 @@
 							?>
                             </ul>
                         </div>
-                        <div class="widget  tag-blog">
-                            <h3 class="sp-module-title">Tag Cloud</h3>
-                            <div class="tag-blog">
-                                <ul>
-                                    <li> <a href="/" target="_parent">love</a>
-                                    </li>
-                                    <li> <a href="/" target="_parent">Investment</a>
-                                    </li>
-                                    <li> <a href="/" target="_parent">2016</a>
-                                    </li>
-                                    <li> <a href="/" target="_parent">Science</a>
-                                    </li>
-                                    <li> <a href="/" target="_parent">Worldwide</a>
-                                    </li>
-                                    <li> <a href="/" target="_parent">Joomla!</a>
-                                    </li>
-                                    <li> <a href="/" target="_parent">Career</a>
-                                    </li>
-                                    <li><a href="/" target="_parent">Board</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                       
                         <div class="widget post">
                             <h3 class="sp-module-title">Latest Post</h3>
+                            <?php
+                            $recent_args = array(
+                                "posts_per_page" => 5,
+                                "orderby"        => "date",
+                                "order"          => "DESC"
+                            );      
+
+                            $recent_posts = new WP_Query( $recent_args );
+                            if ( $recent_posts -> have_posts() ) :
+                                while ( $recent_posts -> have_posts() ) :
+                            
+                                $recent_posts -> the_post();
+                            ?>
                             <div class="latestnews">
                                 <div class="recent-post">
-                                    <a href="/" target="_parent">Achived trophy on Industrial managment.</a>
-                                    <span class="icon-calendar"></span>20 April 2016
+                                    <a href="<?php the_permalink() ?>" target="_parent"><?php the_title() ?></a>
+                                    <span class="icon-calendar"></span> <?= get_the_date('l, j F Y') ?>
                                 </div>
                             </div>
-                            <div class="latestnews">
-                                <div class="recent-post">
-                                    <a href="/" target="_parent">Your Time Work For Your Company</a>
-                                    <span class="icon-calendar"></span>20 April 2016
-                                </div>
-                            </div>
-                            <div class="latestnews">
-                                <div class="recent-post">
-                                    <a href="/" target="_parent">Experience and Resources By Your Side.</a>
-                                    <span class="icon-calendar"></span>20 April 2016
-                                </div>
-                            </div>
-                            <div class="latestnews">
-                                <div class="recent-post">
-                                    <a href="/" target="_parent">You Have Roots Here Now</a>
-                                    <span class="icon-calendar"></span>20 April 2016
-                                </div>
-                            </div>
-                            <div class="latestnews">
-                                <div class="recent-post">
-                                    <a href="/" target="_parent">Future. Dreams Com True.</a>
-                                    <span class="icon-calendar"></span>20 April 2016
-                                </div>
-                            </div>
+                            <?php endwhile; wp_reset_postdata(); endif; ?>
                         </div>
                     </aside>
                 </div>
