@@ -22,12 +22,6 @@
                     ?>
                         </h2>
                     </div>
-                    <div class="col-sm-6 breadcrumb-block text-right">
-                        <ol class="breadcrumb">
-                            <li><span>You are here:</span><a href="index.html">Home</a></li>
-                            <!-- <li class="active">news</li> -->
-                        </ol>
-                    </div>
                 </div>
             </div>
         </section>

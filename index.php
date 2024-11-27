@@ -240,7 +240,7 @@
           $ids[] = get_the_ID();
       ?>
           <div class="service-block col-sm-4">
-            <img src="<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>" width="100%" height="250px">
+            <img src="<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>" width="100%" height="250px" style="object-fit:cover">
             <a href="<?php the_permalink() ?>" target="_parent">
               <h3 class="title"><?php the_title() ?></h3>
             </a>
@@ -274,7 +274,7 @@
         ?>
             <div class="service-list">
               <div class="pull-left">
-                <img class="img-responsive" src="<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>" width="100" height="70">
+                <img class="img-responsive" src="<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>" width="100" height="70" style="object-fit:cover">
               </div>
               <div class="media-body">
                 <h4 class="title">
