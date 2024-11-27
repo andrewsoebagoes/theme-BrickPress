@@ -215,6 +215,48 @@
   </div>
 </section>
 
+<?php
+$cookie_name = "visitor_counter";
+$date = date('Y-m-d');
+$init_counter = [$date => 0];
+$counter = get_option( $cookie_name,  $init_counter);
+$total = array_sum($counter);
+$month = date('Y-m');
+$month_counter = array_filter($counter, function($value, $key) use ($month){
+  return substr($key, 0, 7) == $month;
+}, ARRAY_FILTER_USE_BOTH);
+?>
+<section id="counter" class="space parallax1" style="padding-bottom:100px;padding-top:80px;background-color:#047009;">
+  <div class="container">
+      <div class="row">
+          <div class="counter-heading col-sm-12 col-md-6">
+              <div class="heading">
+                  <h2 class="title">Visitor Counter</h2>
+              </div>
+              <div class="counter-base col-sm-12 no-padding">
+                  <div class="col-sm-4 counter-block">
+                      <div class="count"><?=$counter[$date]?></div>
+                      <h3>Hari ini</h3>
+                  </div>
+                  <div class="col-sm-4 counter-block">
+                      <div class="count"><?=array_sum($month_counter)?></div>
+                      <h3>Bulan ini</h3>
+                  </div>
+                  <div class="col-sm-4 counter-block">
+                      <div class="count"><?=$total?></div>
+                      <h3>Total</h3>
+                  </div>
+              </div>
+          </div>
+          <div class="counter col-sm-12 col-md-6">
+            <div style="background:#FFF;padding:20px;">
+              <canvas id="visitor-counter"></canvas>
+            </div>
+          </div>
+      </div>
+  </div>
+</section>
+
 
 <!--Kegiatan-->
 <section id="about" class="space">

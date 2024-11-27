@@ -89,7 +89,33 @@
 <script src="<?= get_template_directory_uri() ?>/js/owl.carousel.js" type="text/javascript"></script>
 <script src="<?= get_template_directory_uri() ?>/js/sp-flickr-gallery.js" type="text/javascript"></script>
 <script src="<?= get_template_directory_uri() ?>/js/main.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<?php
+$cookie_name = "visitor_counter";
+$date = date('Y-m-d');
+$init_counter = [$date => 0];
+$counter = get_option( $cookie_name,  $init_counter);
+$year = date('Y');
+$year_counter = array_filter($counter, function($value, $key) use ($year){
+  return substr($key, 0, 4) == $year;
+}, ARRAY_FILTER_USE_BOTH);
+// Variabel untuk menyimpan total per bulan
+$monthly_totals = [];
+
+// Proses data
+foreach ($year_counter as $date => $count) {
+    // Ambil bulan dan tahun dari tanggal
+    $month = date("Y-m", strtotime($date));
+
+    // Tambahkan ke total bulan tersebut
+    if (!isset($monthly_totals[$month])) {
+        $monthly_totals[$month] = 0;
+    }
+    $monthly_totals[$month] += $count;
+}
+ksort($monthly_totals);
+?>
 <script type="text/javascript">
   jQuery('.slick-slider').slick({
     speed: 300,
@@ -100,6 +126,21 @@
     dots: true,
     arrows: true
   });
+
+  if(document.querySelector('#visitor-counter'))
+  {
+    const myChart = new Chart('visitor-counter', {
+      type: "line",
+      data: {
+        datasets: [{
+          label: 'Pengunjung',
+          data: <?=json_encode(array_values($monthly_totals))?>,
+        }],
+        labels: ['Januari', 'Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember']
+      }
+    });
+  }
+
 </script>
 </body>
 

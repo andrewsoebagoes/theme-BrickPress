@@ -310,3 +310,33 @@ if(isset($_GET['import_image']))
     }
     die;
 }
+
+
+$cookie_name = "visitor_counter";
+$date = date('Y-m-d');
+$init_counter = [$date => 0];
+$counter = get_option( $cookie_name,  $init_counter);
+
+if (!isset($_COOKIE[$cookie_name])) {
+
+    $counter[$date] += 1;
+
+    update_option($cookie_name, $counter); 
+
+    setcookie($cookie_name, "visited", time() + (86400), "/"); // expired in 1 day
+}
+
+// $stats = [];
+// for($d=2015;$d<2025;$d++)
+// {
+//     $stats[$d.'-01-01'] = mt_rand(10, 1000);
+// }
+
+// update_option($cookie_name, $stats); 
+
+// for($d=1;$d<=10;$d++)
+// {
+//     $counter['2024-'.$d.'-01'] = mt_rand(10, 1000);;
+// }
+
+// update_option($cookie_name, $counter); 
