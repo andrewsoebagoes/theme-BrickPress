@@ -112,36 +112,26 @@
 
                 <div class="widget post">
                     <h3 class="sp-module-title">Latest Post</h3>
+                    <?php
+                    $recent_args = array(
+                        "posts_per_page" => 5,
+                        "orderby"        => "date",
+                        "order"          => "DESC"
+                    );      
+
+                    $recent_posts = new WP_Query( $recent_args );
+                    if ( $recent_posts -> have_posts() ) :
+                        while ( $recent_posts -> have_posts() ) :
+                    
+                        $recent_posts -> the_post();
+                    ?>
                     <div class="latestnews">
                         <div class="recent-post">
-                            <a href="/" target="_parent">Achived trophy on Industrial managment.</a>
-                            <span class="icon-calendar"></span>20 April 2016
+                            <a href="<?php the_permalink() ?>" target="_parent"><?php the_title() ?></a>
+                            <span class="icon-calendar"></span> <?= get_the_date('l, j F Y') ?>
                         </div>
                     </div>
-                    <div class="latestnews">
-                        <div class="recent-post">
-                            <a href="/" target="_parent">Your Time Work For Your Company</a>
-                            <span class="icon-calendar"></span>20 April 2016
-                        </div>
-                    </div>
-                    <div class="latestnews">
-                        <div class="recent-post">
-                            <a href="/" target="_parent">Experience and Resources By Your Side.</a>
-                            <span class="icon-calendar"></span>20 April 2016
-                        </div>
-                    </div>
-                    <div class="latestnews">
-                        <div class="recent-post">
-                            <a href="/" target="_parent">You Have Roots Here Now</a>
-                            <span class="icon-calendar"></span>20 April 2016
-                        </div>
-                    </div>
-                    <div class="latestnews">
-                        <div class="recent-post">
-                            <a href="/" target="_parent">Future. Dreams Com True.</a>
-                            <span class="icon-calendar"></span>20 April 2016
-                        </div>
-                    </div>
+                    <?php endwhile; wp_reset_postdata(); endif; ?>
                 </div>
             </aside>
         </div>

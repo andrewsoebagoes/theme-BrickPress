@@ -163,6 +163,12 @@
         wp_reset_postdata();
       }
       ?>
+
+      <div class="col-sm-12">
+        <center>
+          <a href='<?= get_post_type_archive_link( 'publikasi' ); ?>' class='sppb-btn sppb-btn-default sppb-btn-'>Lihat Semua Publikasi</a>
+        </center>
+      </div>
     </div>
   </div>
 </section>
