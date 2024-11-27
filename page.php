@@ -17,7 +17,7 @@
                               <div class="col-sm-6 breadcrumb-block text-right">
                                    <ol class="breadcrumb">
                                         <li><span>You are here:</span><a href="index.html">Home</a></li>
-                                        <li class="active">servicesssss</li>
+                                        <li class="active">service</li>
                                    </ol>
                               </div>
                          </div>
