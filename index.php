@@ -135,7 +135,7 @@
       $args = array(
         'post_type'     =>  'publikasi',
         'post_status'   =>  'publish',
-        'posts_per_page' =>  2,
+        'posts_per_page' =>  3,
         'orderby'       => 'date',
         'order'         => 'DESC'
       );
@@ -146,7 +146,7 @@
           $posts->the_post();
       ?>
           <div class="service-block col-sm-4">
-            <img src="<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>" width="300px">
+            <img src="<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>" width="300px" height="150px" style="object-fit:cover">
             <a href="<?php the_permalink() ?>" target="_parent">
               <h3 class="title"><?php the_title() ?></h3>
             </a>
@@ -163,54 +163,6 @@
         wp_reset_postdata();
       }
       ?>
-
-      <div class="service-block col-sm-4">
-        <?php
-        $args = array(
-          'post_type'      => 'publikasi',
-          'posts_per_page' => 4,
-          'order'          => 'DESC',
-        );
-        $posts = new WP_Query($args);
-        $isExists = false;
-        if ($posts->have_posts()) {
-          while ($posts->have_posts()) {
-            $posts->the_post();
-            $isExists = true;
-        ?>
-            <div class="service-list">
-              <div class="pull-left">
-                <img class="img-responsive" src="<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>" width="100" height="70">
-              </div>
-              <div class="media-body">
-                <h4 class="title">
-                  <a href="<?php the_permalink() ?>" target="_parent"><?php the_title() ?></a>
-                </h4>
-                <p>
-                  <?= wp_trim_words(get_the_content(), 3) ?>
-                </p>
-              </div>
-            </div>
-        <?php
-          }
-          wp_reset_postdata();
-        }
-        ?>
-
-        <div class="button">
-          <?php
-          if ($isExists) :
-          ?>
-            <a target="_parent" href="<?= esc_url($archive_link) ?>" class="simple">
-              Lihat Semua Publikasi <i class="fa fa-long-arrow-right"></i>
-            </a>
-          <?php else : ?>
-            <p>Arsip Publikasi tidak ditemukan.</p>
-          <?php endif; ?>
-
-        </div>
-
-      </div>
     </div>
   </div>
 </section>
