@@ -1,5 +1,6 @@
    <!--Breadcrumb-->
    <?php get_header() ?>
+
 	<!--Breadcrumb-->
 	<?php 
 		if(have_posts())
