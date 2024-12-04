@@ -47,14 +47,17 @@
                 <a href="<?php the_permalink() ?>" target="_parent"><?php the_title() ?></a>
               </h3>
               <ul class="meta">
-                <li> <i class="fa fa-calendar"></i>
-                  <span class="sppb-meta-date"><?= get_the_date('l, j F Y') ?></span>
-                </li>
                 <li> <i class="fa fa-user"></i>
                   <span class="sppb-meta-author"><?php the_author() ?></span>
                 </li>
+                <li> <i class="fa fa-calendar"></i>
+                  <span class="sppb-meta-date"><?= get_the_date('l, j F Y') ?></span>
+                </li>
               </ul>
-              <p><?= wp_trim_words(get_the_content(), 20) ?></p>
+              <p><?= wp_trim_words(get_the_content(), 50) ?>
+                <a target="_parent" href="<?php the_permalink() ?>" style="margin-bottom:20px;margin-top:5px" class="simple">Lihat Selengkapnya<i class="fa fa-long-arrow-right"></i>
+                </a>
+              </p>
             </div>
           </article>
       <?php
@@ -76,7 +79,7 @@
         if ($posts->have_posts()) {
           while ($posts->have_posts()) {
             $posts->the_post();
-            if(in_array(get_the_ID(), $ids)) continue;
+            if (in_array(get_the_ID(), $ids)) continue;
         ?>
             <article class="col-sm-12 news-block no-padding">
               <div class="article-thumb pull-left">
@@ -86,16 +89,16 @@
               </div>
               <div class="article-info">
                 <h3 class="article-title">
-                  <a href="<?= the_permalink() ?>"><?php the_title() ?></a>
+                  <a href="<?= the_permalink() ?>"><?= wp_trim_words(get_the_title(), 5) ?></a>
                 </h3>
-                <ul class="meta">
+                <!-- <ul class="meta">
                   <li> <i class="fa fa-user"></i>
                     <span class="sppb-meta-author"><?php the_author() ?></span>
                   </li>
                   <li> <i class="fa fa-calendar"></i>
                     <span class="sppb-meta-date"><?= get_the_date('l, j F Y') ?></span>
                   </li>
-                </ul>
+                </ul> -->
                 <p><?= wp_trim_words(get_the_content(), 10) ?></p>
               </div>
             </article>
@@ -104,22 +107,23 @@
           // wp_reset_postdata();
         }
         ?>
+        <div class="button" style="margin-top: 10px;">
+          <?php
+          // Ambil informasi kategori "berita"
+          $category = get_category_by_slug('informasi'); // Ganti 'berita' dengan slug kategori Anda
+          if ($category) :
+            $category_link = get_category_link($category->term_id); // Dapatkan URL kategori
+          ?>
+            <a target="_parent" href="<?= esc_url($category_link) ?>" class="simple">
+              Lihat Semua Berita <i class="fa fa-long-arrow-right"></i>
+            </a>
+          <?php else : ?>
+            <p>Kategori tidak ditemukan.</p>
+          <?php endif; ?>
+        </div>
       </div>
     </div>
-    <div class="button">
-      <?php
-      // Ambil informasi kategori "berita"
-      $category = get_category_by_slug('informasi'); // Ganti 'berita' dengan slug kategori Anda
-      if ($category) :
-        $category_link = get_category_link($category->term_id); // Dapatkan URL kategori
-      ?>
-        <a target="_parent" href="<?= esc_url($category_link) ?>" class="simple">
-          Lihat Semua Berita <i class="fa fa-long-arrow-right"></i>
-        </a>
-      <?php else : ?>
-        <p>Kategori tidak ditemukan.</p>
-      <?php endif; ?>
-    </div>
+
   </div>
 </section>
 
@@ -145,15 +149,27 @@
         while ($posts->have_posts()) {
           $posts->the_post();
       ?>
-          <div class="service-block col-sm-4">
-            <img src="<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>" width="300px" height="150px" style="object-fit:cover">
-            <a href="<?php the_permalink() ?>" target="_parent">
-              <h3 class="title"><?php the_title() ?></h3>
-            </a>
-            <i><i class="fas fa-calendar-alt"></i> <?= get_the_date('l, j F Y') ?></i>
-            <p>
-              <?= wp_trim_words(get_the_content(), 10) ?>
-            </p>
+          <div class="service-block col-md-4 col-sm-12 main-heading ">
+            <div class="article-thumb">
+              <img class="img-responsive" src="<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>" style="object-fit:cover">
+            </div>
+            <div class="article-info">
+              <h3 class="article-title">
+                <a href="<?php the_permalink() ?>" target="_parent"><?php the_title() ?></a>
+              </h3>
+              <ul class="meta">
+                <li> <i class="fa fa-user"></i>
+                  <span class="sppb-meta-author"><?php the_author() ?></span>
+                </li>
+                <li> <i class="fa fa-calendar"></i>
+                  <span class="sppb-meta-date"><?= get_the_date('l, j F Y') ?></span>
+                </li>
+              </ul>
+              <p><?= wp_trim_words(get_the_content(), 20) ?>
+                <a target="_parent" href="<?php the_permalink() ?>" style="margin-bottom:20px;margin-top:5px" class="simple">Lihat Selengkapnya<i class="fa fa-long-arrow-right"></i>
+                </a>
+              </p>
+            </div>
           </div>
 
       <?php
@@ -164,7 +180,7 @@
 
       <div class="col-sm-12">
         <center>
-          <a href='<?= get_post_type_archive_link( 'publikasi' ); ?>' class='sppb-btn sppb-btn-default sppb-btn-'>Lihat Semua Publikasi</a>
+          <a href='<?= get_post_type_archive_link('publikasi'); ?>' class='sppb-btn sppb-btn-default sppb-btn-'>Lihat Semua Publikasi</a>
         </center>
       </div>
     </div>
@@ -175,41 +191,41 @@
 $cookie_name = "visitor_counter";
 $date = date('Y-m-d');
 $init_counter = [$date => 0];
-$counter = get_option( $cookie_name,  $init_counter);
+$counter = get_option($cookie_name,  $init_counter);
 $total = array_sum($counter);
 $month = date('Y-m');
-$month_counter = array_filter($counter, function($value, $key) use ($month){
+$month_counter = array_filter($counter, function ($value, $key) use ($month) {
   return substr($key, 0, 7) == $month;
 }, ARRAY_FILTER_USE_BOTH);
 ?>
 <section id="counter" class="space parallax1" style="padding-bottom:100px;padding-top:80px;background-color:#047009;">
   <div class="container">
-      <div class="row">
-          <div class="counter-heading col-sm-12 col-md-6">
-              <div class="heading">
-                  <h2 class="title">Visitor Counter</h2>
-              </div>
-              <div class="counter-base col-sm-12 no-padding">
-                  <div class="col-sm-4 counter-block">
-                      <div class="count"><?=$counter[$date]?></div>
-                      <h3>Hari ini</h3>
-                  </div>
-                  <div class="col-sm-4 counter-block">
-                      <div class="count"><?=array_sum($month_counter)?></div>
-                      <h3>Bulan ini</h3>
-                  </div>
-                  <div class="col-sm-4 counter-block">
-                      <div class="count"><?=$total?></div>
-                      <h3>Total</h3>
-                  </div>
-              </div>
+    <div class="row">
+      <div class="counter-heading col-sm-12 col-md-6">
+        <div class="heading">
+          <h2 class="title">Visitor Counter</h2>
+        </div>
+        <div class="counter-base col-sm-12 no-padding">
+          <div class="col-sm-4 counter-block">
+            <div class="count"><?= $counter[$date] ?></div>
+            <h3>Hari ini</h3>
           </div>
-          <div class="counter col-sm-12 col-md-6">
-            <div style="background:#FFF;padding:20px;">
-              <canvas id="visitor-counter"></canvas>
-            </div>
+          <div class="col-sm-4 counter-block">
+            <div class="count"><?= array_sum($month_counter) ?></div>
+            <h3>Bulan ini</h3>
           </div>
+          <div class="col-sm-4 counter-block">
+            <div class="count"><?= $total ?></div>
+            <h3>Total</h3>
+          </div>
+        </div>
       </div>
+      <div class="counter col-sm-12 col-md-6">
+        <div style="background:#FFF;padding:20px;">
+          <canvas id="visitor-counter"></canvas>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -239,14 +255,24 @@ $month_counter = array_filter($counter, function($value, $key) use ($month){
       ?>
           <div class="service-block col-sm-4">
             <img src="<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>" width="100%" height="250px" style="object-fit:cover">
-            <a href="<?php the_permalink() ?>" target="_parent">
-              <h3 class="title"><?php the_title() ?></h3>
-            </a>
-            <p style="height:180px;overflow:hidden;">
-              <?= wp_trim_words(get_the_content(), 50) ?> ...
-            </p>
-            <a target="_parent" href="<?php the_permalink() ?>" class="simple">Read More<i class="fa fa-long-arrow-right"></i>
-            </a>
+            <div class="article-info">
+              <h3 class="article-title">
+                <a href="<?php the_permalink() ?>" target="_parent"><?php the_title() ?></a>
+              </h3>
+              <!-- <ul class="meta">
+                <li> <i class="fa fa-user"></i>
+                  <span class="sppb-meta-author"><?php the_author() ?></span>
+                </li>
+                <li> <i class="fa fa-calendar"></i>
+                  <span class="sppb-meta-date"><?= get_the_date('l, j F Y') ?></span>
+                </li>
+              </ul> -->
+              <p><?= wp_trim_words(get_the_content(), 20) ?>
+
+                <a target="_parent" href="<?php the_permalink() ?>" style="margin-bottom:20px;margin-top:5px" class="simple">Lihat Selengkapnya<i class="fa fa-long-arrow-right"></i>
+                </a>
+              </p>
+            </div>
           </div>
 
       <?php
@@ -255,44 +281,44 @@ $month_counter = array_filter($counter, function($value, $key) use ($month){
       }
       ?>
       <div class="service-block col-sm-4">
-        <?php
-        $args = array(
-          'post_type'     =>  'post',
-          'post_status'   =>  'publish',
-          'posts_per_page' =>  5,
-          'category_name' =>  'kegiatan',
-          'orderby'       => 'date',
-          'order'         => 'DESC'
-        );
-        $posts = new WP_Query($args);
-        if ($posts->have_posts()) {
-          while ($posts->have_posts()) {
-            $posts->the_post();
-            if(in_array(get_the_ID(), $ids)) continue;
-        ?>
-            <div class="service-list">
+        <div class="service-list">
+          <?php
+          $args = array(
+            'post_type'     =>  'post',
+            'post_status'   =>  'publish',
+            'posts_per_page' =>  5,
+            'category_name' =>  'kegiatan',
+            'orderby'       => 'date',
+            'order'         => 'DESC'
+          );
+          $posts = new WP_Query($args);
+          if ($posts->have_posts()) {
+            while ($posts->have_posts()) {
+              $posts->the_post();
+              if (in_array(get_the_ID(), $ids)) continue;
+          ?>
               <div class="pull-left">
                 <img class="img-responsive" src="<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>" width="100" height="70" style="object-fit:cover">
               </div>
               <div class="media-body">
                 <h4 class="title">
-                  <a href="<?php the_permalink() ?>" target="_parent"><?php the_title() ?></a>
+                  <a href="<?php the_permalink() ?>" target="_parent"><?= wp_trim_words(get_the_title(), 5) ?></a>
                 </h4>
                 <p>
                   <?= wp_trim_words(get_the_content(), 3) ?>
                 </p>
               </div>
-            </div>
-        <?php
-          }
-          wp_reset_postdata();
-        }
-        ?>
-
-        <div class="button">
           <?php
-          // Ambil informasi kategori "berita"
-          $category = get_category_by_slug('kegiatan'); // Ganti 'berita' dengan slug kategori Anda
+            }
+            wp_reset_postdata();
+          }
+          ?>
+        </div>
+
+        <div class="button" style="margin-top: 20px;margin-left:2px">
+          <?php
+          // Ambil informasi kategori "kegiatan"
+          $category = get_category_by_slug('kegiatan'); // Ganti 'kegiatan' dengan slug kategori Anda
           if ($category) :
             $category_link = get_category_link($category->term_id); // Dapatkan URL kategori
           ?>

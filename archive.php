@@ -49,9 +49,9 @@ span.page-numbers.current, a.page-numbers:hover {
                                     <img src="<?= get_the_post_thumbnail_url() ?>" width="100%" height="auto">
                                 <?php endif ?>
                                 <div class="blog-content">
-                                    <div class="icon pull-left">
+                                    <!-- <div class="icon pull-left">
                                         <i class="fa fa-thumb-tack"></i>
-                                    </div>
+                                    </div> -->
                                     <div class="blog-info">
                                         <ul class="meta">
                                             <li data-toggle="tooltip" data-placement="top" title="" data-original-title="Written by">

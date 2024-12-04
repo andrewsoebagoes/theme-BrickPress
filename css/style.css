@@ -1146,6 +1146,7 @@ Services
     font-size: 20px;
     font-weight: 700;
     line-height: 20px;
+    margin-bottom: -3px;
 }
 
 .service-list .media-body .title {
@@ -1656,7 +1657,8 @@ Blog
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 15px;
-    margin-top: 40px;
+    margin-top: 11px;
+    margin-bottom: -4px;
 }
 
 .recent-news article .article-title a {
@@ -1665,16 +1667,32 @@ Blog
 
 article .meta i {
     color: #999;
-    font-size: 13px;
+    font-size: 10px;
     padding-left: 0;
-    padding-right: 5px;
+    padding-right: 3px;
 }
 
 article .meta > li {
     display: inline-block;
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 14px;
+    margin: 0;
+    color: #888;
+    font-style: italic;
+}
+ .meta i {
+    color: #999;
+    font-size: 10px;
+    padding-left: 0;
+    padding-right: 3px;
+}
+
+ .meta > li {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
     margin: 0;
     color: #888;
     font-style: italic;
@@ -1682,11 +1700,20 @@ article .meta > li {
 
 article .meta > li:not(:last-child) {
     border-right: 1px solid #999;
-    padding-right: 14px;
+    padding-right: 6px;
 }
 
 article .meta > li:not(:first-child) {
-    padding-left: 14px;
+    padding-left: 2px;
+}
+
+ .meta > li:not(:last-child) {
+    border-right: 1px solid #999;
+    padding-right: 6px;
+}
+
+ .meta > li:not(:first-child) {
+    padding-left: 2px;
 }
 
 .recent-news .blog-list article h3 {
@@ -1748,8 +1775,8 @@ article .meta > li:not(:first-child) {
 }
 
 .inner #blog .blog-info {
-    margin-bottom: 30px;
-    margin-left: 68px;
+    margin-bottom: 20px;
+    /* margin-left: 68px; */
 }
 
 .inner #blog .blog-info .meta li {
@@ -1761,7 +1788,7 @@ article .meta > li:not(:first-child) {
     line-height: 12px;
     margin: 0;
     padding: 0 8px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     position: static;
 }
 
@@ -1782,7 +1809,8 @@ article .meta > li:not(:first-child) {
 }
 
 .inner .blog-block .meta {
-    margin-bottom: 15px;
+    margin-bottom: -10px;
+    margin-top: -10px;
 }
 
 .inner .blog-block a.readmore {
@@ -2447,7 +2475,7 @@ Responsive
         float: none;
     }
     #sp-header .sp-megamenu-wrapper {
-        text-align: center;
+        text-align: left;
     }
     #offcanvas-toggler > i {
         padding: 0;

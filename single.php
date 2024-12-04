@@ -18,11 +18,12 @@
 							<img src="<?= get_the_post_thumbnail_url() ?>" width="100%" height="auto">
 						<?php endif ?>
                                 <div class="blog-content">
-                                    <div class="icon pull-left">
+                                    <!-- <div class="icon pull-left">
                                         <i class="fa fa-thumb-tack"></i>
-                                    </div>
+                                    </div> -->
                                     <div class="blog-info">
-                                        <ul class="meta">
+                                        <h1 style="margin-top: -20px;margin-bottom:15px"><a href="#"><?php the_title() ?></a> </h1>
+                                        <ul class="meta" style="margin-left:-7px">
                                             <li data-toggle="tooltip" data-placement="top" title="" data-original-title="Written by">
                                                 <i class="fa fa-user"></i><?php the_author() ?>
                                             </li>
@@ -44,7 +45,6 @@
                                                 <i class="fa fa-calendar-o"></i> <?= get_the_date('l, j F Y') ?>
                                             </li>
                                         </ul>
-                                        <h2><a href="#"><?php the_title() ?></a> </h2>
                                     </div>
                                     <p><?php the_content() ?></p>
                                     
