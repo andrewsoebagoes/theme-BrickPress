@@ -88,8 +88,6 @@
     $args = array(
       'post_type' => 'indeks',  
       'posts_per_page' => -1,
-      'meta_key' => 'tahun', 
-      'orderby' => 'meta_value_num',
       'order' => 'DESC',
     );
     $query = new WP_Query($args);
@@ -99,12 +97,14 @@
 
       while ($query->have_posts()) : $query->the_post();
         $tahun = get_the_title(); 
-        $judul_indeks = get_field('judul'); 
-        $nilai = get_field('nilai'); 
+        // $judul_indeks = get_field('judul'); 
+        // $nilai = get_field('nilai'); 
 
-        $indeks_data[$tahun][] = [
-          'judul' => $judul_indeks,
-          'nilai' => $nilai
+        $indeks_data[$tahun] = [
+          'indeks_inovasi_daerah' => get_field('indeks_inovasi_daerah'),
+          'indeks_pengelolaan_keuangan_daerah' => get_field('indeks_pengelolaan_keuangan_daerah'),
+          'indeks_pembangunan_statistik' => get_field('indeks_pembangunan_statistik'),
+          'indeks_daya_saing_daerah' => get_field('indeks_daya_saing_daerah'),
         ];
       endwhile;
       wp_reset_postdata();
@@ -122,10 +122,10 @@
           <div class="tab-content" id="<?php echo $tahun; ?>" style="<?php echo ($tahun == array_key_first($indeks_data)) ? '' : 'display: none;'; ?>">
             <h3>Indeks <?php echo $tahun; ?></h3>
             <table>
-              <?php foreach ($data as $item) : ?>
+              <?php foreach ($data as $judul => $nilai) : ?>
                 <tr>
-                  <td><?php echo $item['judul']; ?></td>
-                  <td><?php echo $item['nilai']; ?></td>
+                  <td><?php echo ucwords(str_replace('_',' ',$judul)); ?></td>
+                  <td><?php echo $nilai; ?></td>
                 </tr>
               <?php endforeach; ?>
             </table>
