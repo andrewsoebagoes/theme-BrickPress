@@ -26,7 +26,7 @@ class bs4Navwalker extends Walker_Nav_Menu
         $output .= "\n$indent<div class=\"sp-dropdown sp-dropdown-main sp-menu-right\">\n";
         $output .= "\n$indent<div class=\"sp-dropdown-inner\">\n";
         $output .= "\n$indent<ul class=\"sp-dropdown-items nav-child unstyled small\">\n";
-        $output .= "\n$indent<li class=\"sp-menu-item \">\n";
+        // $output .= "\n$indent<li class=\"sp-menu-item \">\n";
     }
 
     /**
@@ -175,20 +175,20 @@ class bs4Navwalker extends Walker_Nav_Menu
 
         $item_output = $args->before;
         // New
-        /*
         if ($depth === 0 && in_array('menu-item-has-children', $classes)) {
             $item_output .= '<a class="nav-link dropdown-toggle"' . $attributes .'data-toggle="dropdown">';
         } elseif ($depth === 0) {
             $item_output .= '<a class="nav-link"' . $attributes .'>';
         } else {
-            $item_output .= '<a class="dropdown-item"' . $attributes .'>';
+            $item_output .= '<li class="sp-menu-item "><a class="dropdown-item"' . $attributes .'>';
         }
-        */
-        //
-        $item_output .= '<a'. $attributes .'>';
+        // $item_output .= '<a'. $attributes .'>';
         /** This filter is documented in wp-includes/post-template.php */
         $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
         $item_output .= '</a>';
+        if ($depth != 0) {
+            $item_output .= "</li>";
+        }
         $item_output .= $args->after;
 
         /**

@@ -2,6 +2,70 @@
 
 
 <?php get_slider() ?>
+<style>
+  /* Tab Navigation */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .tab-button {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+
+  .tab-button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  /* Tab Content */
+  .tab-content {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .tab-content table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .tab-content table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .tab-content h3 {
+    text-align: center;
+    color: #333;
+  }
+
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .tab-content {
+      width: 95%;
+      padding: 10px;
+    }
+
+    .tab-button {
+      font-size: 12px;
+      padding: 8px 15px;
+    }
+  }
+</style>
 <section class="action">
   <div class="container">
     <div class="row">
@@ -11,6 +75,71 @@
 
     </div>
   </div>
+</section>
+
+<!--Indeks-->
+
+<section class="recent-news space">
+  <div class="container">
+    <div class="col-sm-12 no-padding main-heading text-center">
+      <h2 class="title">Indeks</h2>
+   
+    <?php
+    $args = array(
+      'post_type' => 'indeks',  
+      'posts_per_page' => -1,
+      'meta_key' => 'tahun', 
+      'orderby' => 'meta_value_num',
+      'order' => 'DESC',
+    );
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) :
+      $indeks_data = [];
+
+      while ($query->have_posts()) : $query->the_post();
+        $tahun = get_the_title(); 
+        $judul_indeks = get_field('judul'); 
+        $nilai = get_field('nilai'); 
+
+        $indeks_data[$tahun][] = [
+          'judul' => $judul_indeks,
+          'nilai' => $nilai
+        ];
+      endwhile;
+      wp_reset_postdata();
+    ?>
+      <div class="tabs">
+        <?php foreach ($indeks_data as $tahun => $data) : ?>
+          <button class="tab-button <?php echo ($tahun == array_key_first($indeks_data)) ? 'active' : ''; ?>" data-tab="<?php echo $tahun; ?>">
+            <?php echo $tahun; ?>
+          </button>
+        <?php endforeach; ?>
+      </div>
+      </div>
+      <div class="row">
+        <?php foreach ($indeks_data as $tahun => $data) : ?>
+          <div class="tab-content" id="<?php echo $tahun; ?>" style="<?php echo ($tahun == array_key_first($indeks_data)) ? '' : 'display: none;'; ?>">
+            <h3>Indeks <?php echo $tahun; ?></h3>
+            <table>
+              <?php foreach ($data as $item) : ?>
+                <tr>
+                  <td><?php echo $item['judul']; ?></td>
+                  <td><?php echo $item['nilai']; ?></td>
+                </tr>
+              <?php endforeach; ?>
+            </table>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+    <?php
+    else :
+      echo '<p>Tidak ada data Indeks ditemukan.</p>';
+    endif;
+
+    ?>
+
 </section>
 
 <!--Berita-->
@@ -333,7 +462,31 @@ $month_counter = array_filter($counter, function ($value, $key) use ($month) {
     </div>
   </div>
 </section>
+<!-- Bootstrap
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script> -->
+<script>
+  // Tab Switching Logic
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
 
+  tabButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons
+      tabButtons.forEach((btn) => btn.classList.remove('active'));
+
+      // Add active class to the clicked button
+      button.classList.add('active');
+
+      // Hide all tab contents
+      tabContents.forEach((content) => (content.style.display = 'none'));
+
+      // Show the associated tab content
+      const targetTab = button.getAttribute('data-tab');
+      document.getElementById(targetTab).style.display = 'block';
+    });
+  });
+</script>
 
 
 <?php get_footer() ?>

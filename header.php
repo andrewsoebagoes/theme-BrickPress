@@ -29,6 +29,7 @@
      <!--Portfolio-->
      <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/css/featherlight.min.css" type="text/css" />
      <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/css/spsimpleportfolio.css" type="text/css" />
+     
      <!--Owl Carousel-->
      <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/css/owl.carousel.css" type="text/css" />
      <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/css/owl.theme.css" type="text/css" />
@@ -36,8 +37,13 @@
      <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/css/sp-flickr-gallery.css" type="text/css" />
      <link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/css/style.css" />
      <link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/style.css" />
+
+     <!-- Bootstrap -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
      <!--Jquery-->
      <script src="<?= get_template_directory_uri() ?>/js/jQuery.js" type="text/javascript"></script>
+     
 
      <link rel="shortcut icon" href="<?= get_template_directory_uri() ?>/images/logoasahan.png" type="image/x-icon">
 

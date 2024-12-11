@@ -2,10 +2,7 @@
 
 require_once('walker.php');
 
-
-
 // Publikasi 
-
 function register_publikasi_post_type() {
     $labels = array(
         'name'               => __('Publikasi', 'textdomain'),
@@ -36,6 +33,32 @@ function register_publikasi_post_type() {
 }
 
 add_action('init', 'register_publikasi_post_type');
+
+// Indeks
+function register_indeks_post_type() {
+    register_post_type('indeks', array(
+        'labels' => array(
+            'name' => 'Indeks',
+            'singular_name' => 'Indeks',
+            'add_new' => 'Tambah Indeks',
+            'add_new_item' => 'Tahun',
+            'edit_item' => 'Edit Indeks',
+            'new_item' => 'Indeks Baru',
+            'view_item' => 'Lihat Indeks',
+            'search_items' => 'Cari Indeks',
+            'not_found' => 'Tidak ada Indeks ditemukan',
+            'not_found_in_trash' => 'Tidak ada Indeks di tempat sampah',
+            'menu_name' => 'Indeks',
+        ),
+        'public' => true,
+        'menu_icon' => 'dashicons-chart-line',
+        'supports' => array('title'),
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'indeks'),
+    ));
+}
+add_action('init', 'register_indeks_post_type');
+
 
 
 
