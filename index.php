@@ -168,7 +168,7 @@
           <article class="col-sm-6 news-block">
             <div class="article-thumb">
               <a href="<?php the_permalink() ?>" target="_parent">
-                <img class="img-responsive" src="<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>" alt="">
+                <img class="img-responsive" src="<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>" alt="" style="width:100%">
               </a>
             </div>
             <div class="article-info">
@@ -280,7 +280,7 @@
       ?>
           <div class="service-block col-md-4 col-sm-12 main-heading ">
             <div class="article-thumb">
-              <img class="img-responsive" src="<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>" style="object-fit:cover">
+              <img class="img-responsive" src="<?= get_the_post_thumbnail_url() && !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/medium_noimage.jpg' ?>" style="object-fit:cover;width:100%;height:200px;">
             </div>
             <div class="article-info">
               <h3 class="article-title">
